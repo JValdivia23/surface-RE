@@ -1,0 +1,79 @@
+{
+  "id": "ev_ba6a8b77aa1b3353f7f6cb35008d4f41960abfaa0349f323a35d492ea1a0a8ae",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_pseudocode",
+  "params": {
+    "function": "0x14004e7c3"
+  },
+  "result": {
+    "calls": [
+      "sub_14004c740",
+      "sub_14004c7b0",
+      "sub_14004da90",
+      "sub_14004db40",
+      "sub_14004dcf0",
+      "sub_14004df80",
+      "sub_14004e290",
+      "sub_140053700"
+    ],
+    "engine": "clean-room lifter",
+    "entry": "0x14004e6a0",
+    "function": "sub_14004e6a0",
+    "gotos": 3,
+    "inline_asm": 6,
+    "pseudo_code": "int64_t sub_14004e6a0(int64_t rcx)\n{\n    rax = *(uint64_t*)0x1401111a0;\n    rax ^= rsp;\n    stack_68 = rax;\n    __asm(\"xorps xmm0, xmm0\");\n    rbx = rcx;\n    __asm(\"movups [rsp+0x48], xmm0\");\n    __asm(\"movups [rsp+0x58], xmm0\");\n    sub_14004da90(&stack_48, &sub_1400d46f0, 0, 0);\n    if (*(uint32_t*)0x14011249c != 0) {\n        sub_14004df80(rbx);\n    }\n    ecx = *(uint32_t*)(rbx + 0x18);\n    if (ecx <= 3 /* unsigned */) {\nlabel_14004e761:\n        sub_14004dcf0(1, &sub_1400d4700, *(uint32_t*)(rbx + 16));\n        sub_14004c740(rbx, *(uint32_t*)(rbx + 16), 4, 1);\n        __asm(\"xorps xmm0, xmm0\");\n        __asm(\"movups [rsp+0x28], xmm0\");\n        __asm(\"movups [rsp+0x38], xmm0\");\n        sub_14004da90(&stack_28, &sub_1400d4b60, 0, 0);\n        edx = stack_20;\n        edx &= 0xf8040201;\n        edx |= 0x8040200;\n        sub_14004c7b0(rbx, rdx, 0x100d8, 1);\n        sub_14004db40(&stack_28);\n        eax = 3;\n        edx = 0x207;\n        edx = eax;\n        r8d = rax + 5;\nlabel_14004e7f1:\n        sub_14004c740(rbx, rdx, r8, 1);\n    } else {\n        eax = rcx - 6;\n        if (eax <= 3 /* unsigned */) {\n            goto label_14004e761;\n        } else {\n            eax = rcx - 4;\n            if (eax <= 1 /* unsigned */) {\nlabel_14004e711:\n                sub_14004dcf0(1, &sub_1400d4740, *(uint32_t*)(rbx + 16));\n                sub_14004c740(rbx, *(uint32_t*)(rbx + 16), 4, 1);\n                sub_14004dcf0(1, &sub_1400d4780, 0x3e8);\n                edx = 0x3e8;\n                r8d = 0x18;\n                goto label_14004e7f1;\n            } else {\n                eax = rcx - 10;\n                if (eax <= 1 /* unsigned */) {\n                    goto label_14004e711;\n                }\n            }\n        }\n    }\n    *(uint32_t*)0x140110e90 = 1;\n    sub_14004e290(rbx);\n    sub_14004db40(&stack_48);\n    al = 1;\n    rcx = stack_68;\n    rcx ^= rsp;\n    sub_140053700();\n    return rax;\n}\n",
+    "signature": "int64_t sub_14004e6a0(int64_t rcx)",
+    "strings": [],
+    "structured": false
+  },
+  "summary": "Pseudo-C for sub_14004e6a0 (64 lines, partly unstructured).",
+  "confidence": "inferred",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "register_level",
+      "message": "variables are machine registers and stack slots; types are not recovered"
+    },
+    {
+      "code": "calling_convention_assumed",
+      "message": "call arguments follow the usual x86_64 convention and may be wrong for unusual functions"
+    },
+    {
+      "code": "conditions_from_flags",
+      "message": "branch conditions are rebuilt from the last compare and may be approximate"
+    },
+    {
+      "code": "unstructured_flow",
+      "message": "3 gotos remain where the control flow isn't a simple if/loop"
+    },
+    {
+      "code": "inline_asm",
+      "message": "6 instructions have no C rule and are shown as __asm(...)"
+    },
+    {
+      "code": "deep_engine_unavailable",
+      "message": "Deep mode is on, but Ghidra isn't installed. The person can get Ghidra from Settings → Engines. So this came from the built-in decompiler, which is less exact."
+    }
+  ],
+  "coverage": {
+    "status": "unknown"
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004e6a0"
+    }
+  ],
+  "links": [],
+  "carries_target_content": true
+}

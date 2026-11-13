@@ -1,0 +1,110 @@
+{
+  "id": "ev_ce857b9222878d01236ab80153d250beeb4d0738816e9c3a9b8fed2b5e89bd93",
+  "subject": {
+    "kind": "pe",
+    "sha256": "201d52f2a1d9441ca20b0a7801ec450276e9161a9aa5617fcc165941c74f0d39",
+    "name": "ov7251.sys"
+  },
+  "operation": "native_strings_find",
+  "params": {
+    "case_sensitive": false,
+    "limit": 60,
+    "mode": "regex",
+    "offset": 0,
+    "pattern": "Mipi|Clk|Freq|Lane|Gpio|Led|Power|4800|Vcm|dw9719|MSHW"
+  },
+  "result": {
+    "matches": [
+      {
+        "address": "0x14001b42e",
+        "references": [],
+        "section": ".rdata",
+        "text": "_ANoneVCM"
+      },
+      {
+        "address": "0x14001b450",
+        "references": [
+          {
+            "from": "0x140020158",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "DW9719"
+      },
+      {
+        "address": "0x14001eb28",
+        "references": [
+          {
+            "from": "0x1400215d8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "LedRear"
+      },
+      {
+        "address": "0x14001eb30",
+        "references": [
+          {
+            "from": "0x1400215e0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "LedFront"
+      },
+      {
+        "address": "0x14001eb3c",
+        "references": [
+          {
+            "from": "0x1400215e8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Power0"
+      },
+      {
+        "address": "0x14001eb44",
+        "references": [
+          {
+            "from": "0x1400215f0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Power1"
+      },
+      {
+        "address": "0x140027142",
+        "references": [],
+        "section": ".rsrc",
+        "text": "FileDescription"
+      }
+    ],
+    "total": 7
+  },
+  "summary": "7 strings match \"Mipi|Clk|Freq|Lane|Gpio|Led|Power|4800|Vcm|dw9719|MSHW\".",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "data_sections_only",
+      "message": "only strings stored in the file are searched (absence is not proof)"
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 7,
+    "total": 7
+  },
+  "locations": [],
+  "links": []
+}

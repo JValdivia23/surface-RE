@@ -1,0 +1,48 @@
+{
+  "id": "ev_3cd26203d73f9879b66be7d85fa7c57a99a2458ebafdefed189954ced1f5ae52",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_xrefs_list",
+  "params": {
+    "address": "0x140110ca8",
+    "limit": 200,
+    "offset": 0
+  },
+  "result": {
+    "address": "0x140110ca8",
+    "name": null,
+    "references_from": [],
+    "references_to": [],
+    "total_to": 0
+  },
+  "summary": "0x140110ca8 is referenced from 0 places and refers to 0.",
+  "confidence": "derived",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "static_references",
+      "message": "references made through computed pointers at run time are not seen"
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 0,
+    "total": 0
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x140110ca8"
+    }
+  ],
+  "links": []
+}

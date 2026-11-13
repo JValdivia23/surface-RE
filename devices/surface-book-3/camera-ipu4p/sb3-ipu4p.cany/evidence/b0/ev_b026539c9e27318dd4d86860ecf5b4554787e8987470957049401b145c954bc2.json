@@ -1,0 +1,40 @@
+{
+  "id": "ev_b026539c9e27318dd4d86860ecf5b4554787e8987470957049401b145c954bc2",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_disassemble",
+  "params": {
+    "function": "0x14004e290"
+  },
+  "result": {
+    "assembly": "sub_14004e290:\n  0x14004e290  488bc4               mov rax, rsp\n  0x14004e293  53                   push rbx\n  0x14004e294  57                   push rdi\n  0x14004e295  4881ec88000000       sub rsp, 0x88\n  0x14004e29c  4c634118             movsxd r8, [rcx+0x18]\n  0x14004e2a0  33db                 xor ebx, ebx\n  0x14004e2a2  c7409802000000       mov dword ptr [rax-0x68], 2\n  0x14004e2a9  488bf9               mov rdi, rcx\n  0x14004e2ac  c7409c08000000       mov dword ptr [rax-0x64], 8\n  0x14004e2b3  c740a002000000       mov dword ptr [rax-0x60], 2\n  0x14004e2ba  c740a404000000       mov dword ptr [rax-0x5c], 4\n  0x14004e2c1  c740a804000000       mov dword ptr [rax-0x58], 4\n  0x14004e2c8  c740ac02000000       mov dword ptr [rax-0x54], 2\n  0x14004e2cf  c740b002000000       mov dword ptr [rax-0x50], 2\n  0x14004e2d6  c740b408000000       mov dword ptr [rax-0x4c], 8\n  0x14004e2dd  c740b802000000       mov dword ptr [rax-0x48], 2\n  0x14004e2e4  c740bc04000000       mov dword ptr [rax-0x44], 4\n  0x14004e2eb  c740c004000000       mov dword ptr [rax-0x40], 4\n  0x14004e2f2  48c740c402000000     mov qword ptr [rax-0x3c], 2\n  0x14004e2fa  8958cc               mov [rax-0x34], ebx\n  0x14004e2fd  42395c8430           cmp [rsp+r8*4+0x30], ebx\n  0x14004e302  0f849d020000         je 0x14004e5a5  ; sub_14004e5a5\nloc_14004e308:\n  0x14004e308  8b4914               mov ecx, [rcx+0x14]\n",
+    "entry": "0x14004e290",
+    "function": "sub_14004e290",
+    "instructions": 23
+  },
+  "summary": "23 instructions of sub_14004e290.",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [],
+  "coverage": {
+    "status": "complete",
+    "examined": 23,
+    "total": 23
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004e290"
+    }
+  ],
+  "links": []
+}

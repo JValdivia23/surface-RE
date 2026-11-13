@@ -1,0 +1,65 @@
+{
+  "id": "ev_57c8c85941de466ef91d1bea93e7abd1ab1a8469b482863872afcfbb0cb8dc0c",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_pseudocode",
+  "params": {
+    "function": "0x14004c740"
+  },
+  "result": {
+    "calls": [
+      "sub_140045b50",
+      "sub_14004dcf0"
+    ],
+    "engine": "clean-room lifter",
+    "entry": "0x14004c740",
+    "function": "sub_14004c740",
+    "gotos": 0,
+    "inline_asm": 0,
+    "pseudo_code": "int64_t sub_14004c740(int64_t rcx, int64_t rdx, int64_t r8, int64_t r9)\n{\n    stack_8 = rbx;\n    stack_10 = rbp;\n    stack_18 = rsi;\n    esi = edx;\n    edi = r8d;\n    edx = *(uint32_t*)(rcx + 8);\n    edx += r8d;\n    ebx = r9l;\n    sub_140045b50(1, rdx, esi);\n    if (bl != 0) {\n        r8d = arg_8;\n        r8d += edi;\n        sub_14004dcf0(1, &sub_1400d4280, r8, esi);\n    }\n    rbx = stack_30;\n    rsi = stack_40;\n    return rax;\n}\n",
+    "signature": "int64_t sub_14004c740(int64_t rcx, int64_t rdx, int64_t r8, int64_t r9)",
+    "strings": [],
+    "structured": true
+  },
+  "summary": "Pseudo-C for sub_14004c740 (20 lines).",
+  "confidence": "inferred",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "register_level",
+      "message": "variables are machine registers and stack slots; types are not recovered"
+    },
+    {
+      "code": "calling_convention_assumed",
+      "message": "call arguments follow the usual x86_64 convention and may be wrong for unusual functions"
+    },
+    {
+      "code": "conditions_from_flags",
+      "message": "branch conditions are rebuilt from the last compare and may be approximate"
+    },
+    {
+      "code": "deep_engine_unavailable",
+      "message": "Deep mode is on, but Ghidra isn't installed. The person can get Ghidra from Settings → Engines. So this came from the built-in decompiler, which is less exact."
+    }
+  ],
+  "coverage": {
+    "status": "unknown"
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004c740"
+    }
+  ],
+  "links": [],
+  "carries_target_content": true
+}

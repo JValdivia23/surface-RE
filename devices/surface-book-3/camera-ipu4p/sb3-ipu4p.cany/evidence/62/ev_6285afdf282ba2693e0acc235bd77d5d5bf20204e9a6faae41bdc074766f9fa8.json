@@ -1,0 +1,62 @@
+{
+  "id": "ev_6285afdf282ba2693e0acc235bd77d5d5bf20204e9a6faae41bdc074766f9fa8",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_pseudocode",
+  "params": {
+    "function": "0x14004e290"
+  },
+  "result": {
+    "calls": [],
+    "engine": "clean-room lifter",
+    "entry": "0x14004e290",
+    "function": "sub_14004e290",
+    "gotos": 0,
+    "inline_asm": 0,
+    "pseudo_code": "int64_t sub_14004e290(int64_t rcx)\n{\n    rax = rsp;\n    r8 = *(uint32_t*)(rcx + 0x18);\n    ebx = 0;\n    *(uint32_t*)(rax - 0x68) = 2;\n    rdi = rcx;\n    *(uint32_t*)(rax - 0x64) = 8;\n    *(uint32_t*)(rax - 0x60) = 2;\n    *(uint32_t*)(rax - 0x5c) = 4;\n    *(uint32_t*)(rax - 0x58) = 4;\n    *(uint32_t*)(rax - 0x54) = 2;\n    *(uint32_t*)(rax - 0x50) = 2;\n    *(uint32_t*)(rax - 0x4c) = 8;\n    *(uint32_t*)(rax - 0x48) = 2;\n    *(uint32_t*)(rax - 0x44) = 4;\n    *(uint32_t*)(rax - 0x40) = 4;\n    *(uint64_t*)(rax - 0x3c) = 2;\n    *(uint32_t*)(rax - 0x34) = ebx;\n    ecx = *(uint32_t*)(rcx + 0x14);\n}\n",
+    "signature": "int64_t sub_14004e290(int64_t rcx)",
+    "strings": [],
+    "structured": true
+  },
+  "summary": "Pseudo-C for sub_14004e290 (21 lines).",
+  "confidence": "inferred",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "register_level",
+      "message": "variables are machine registers and stack slots; types are not recovered"
+    },
+    {
+      "code": "calling_convention_assumed",
+      "message": "call arguments follow the usual x86_64 convention and may be wrong for unusual functions"
+    },
+    {
+      "code": "conditions_from_flags",
+      "message": "branch conditions are rebuilt from the last compare and may be approximate"
+    },
+    {
+      "code": "deep_engine_unavailable",
+      "message": "Deep mode is on, but Ghidra isn't installed. The person can get Ghidra from Settings → Engines. So this came from the built-in decompiler, which is less exact."
+    }
+  ],
+  "coverage": {
+    "status": "unknown"
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004e290"
+    }
+  ],
+  "links": [],
+  "carries_target_content": true
+}

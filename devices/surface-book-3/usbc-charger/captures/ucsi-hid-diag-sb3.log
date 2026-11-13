@@ -1,0 +1,139 @@
+[08:09:54.885] Surface Book 3 UCSI-over-HID + SSAM Power Diagnostic
+[08:09:54.885] ====================================================
+[08:09:54.886] Found UCSI HID PPM: /dev/hidraw1 (/sys/bus/hid/devices/0019:045E:09A6.0002)
+[08:09:54.898] Initial Sysfs Power: ADP1=0 | BAT1:Discharging(12.74Wh,2.04W,7.95V) | BAT2:Discharging(41.92Wh,6.20W,7.91V)
+[08:09:55.071] 
+--- Stage 1: Non-Destructive Initial Snapshot ---
+[08:09:55.075]   HID Feature 0x33: raw=330100 -> NumberOfConnectors=1, IsUSBDeviceControllerSupported=0
+[08:09:55.080]   HID Feature 0x32: UCSI_VERSION=0x7628, seq=0, CCI=0x00000000 (len=0, IDLE)
+[08:09:55.080]   Initial MESSAGE_IN=00000000000000000000000000000000 | Full0x32=32287600000000000074440aa8b40efe8200000000000000000000000000000000f362490289973c28bc41eeeeeeeeeeee
+[08:09:55.088]   SSAM ADP1_PSR (TID=1,IID=1,CID=0x0D): 0x00000000 (0) raw=00000000
+[08:09:55.090]   SSAM ADP1_ARTG_mW (TID=1,IID=1,CID=0x0F): 0x00000000 (0) raw=00000000
+[08:09:55.093]   SSAM BASE_PSR? (TID=2,IID=1,CID=0x0D): 0x00000000 (0) raw=00000000
+[08:09:55.097]   SSAM BASE_ARTG_mW? (TID=2,IID=1,CID=0x0F): 0x00000000 (0) raw=00000000
+[08:09:55.099]   SSAM HPMI_SDB_CAPS (TID=1,IID=0,CID=0x50): 0x00000002 (2) raw=02000000
+[08:09:55.101]   SSAM BAT1_PROT_TP (TID=1,IID=1,CID=0x53): (21B) raw=0194cf000034760000a2009b1f931c0000e4250000
+[08:09:55.104]   SSAM BAT2_PROT_TP (TID=2,IID=1,CID=0x53): (21B) raw=01bc1001009cea00006000121f00000000c8320000
+[08:09:55.104] 
+--- Stage 2: UCSI PPM Initialization & Capabilities ---
+[08:09:55.153]   PPM_RESET -> CCI=0x08000000 (len=0, RESET_DONE)
+[08:09:55.172]   SET_NOTIFICATION_ENABLE(0x8001) -> 0x80000000 (len=0, CMD_DONE)
+[08:09:55.191]   GET_CAPABILITY: raw=44810000013400000100000000033001 -> attrs=0x00008144, num_conn=1, opt_feat=0x000034, alt_modes=1, BC=0x0000, PD=0x0300, TypeC=0x0130
+[08:09:55.210]   SET_NOTIFICATION_ENABLE(0x1db65) -> 0x80000000 (len=0, CMD_DONE)
+[08:09:55.228]   GET_CONNECTOR_CAPABILITY(1): raw=f437
+[08:09:55.329]   Baseline GET_ERROR_STATUS: mask=0x0000 (none), vendor=0000000000000000000000000000
+[08:09:55.367]   Conn1 Status: connected=False | dir=SOURCE (Provider) | op_mode=USB_PD | partner=Unknown(0) [USB]
+[08:09:55.367]     RDO=0x00000000 (none) | batt_chg=Nominal | limit=0x0 | chg=0x0000 (none) | raw=00003300000000000100000000000000
+[08:10:17.162] === Stage 3: Live USB-C PD Observation (18s) ===
+[08:10:17.172] EVENT ir=[(50, 0)] seq=0 CCI=0x00000002 (len=0, CONN_CHG=1) | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.74Wh,0.92W,8.11V) | BAT2:Discharging(41.89Wh,6.10W,7.91V)
+[08:10:17.209]     Conn1 Status: connected=False | dir=SINK (Consumer) | op_mode=USB_PD | partner=Unknown(0) [USB]
+[08:10:17.209]       RDO=0x00000000 (none) | batt_chg=Nominal | limit=0x0 | chg=0x4044 (PowerOpMode|NegotiatedPowerLevel|ConnectChange) | raw=44402300000000000100000000000000
+[08:10:19.270]     ACK_CONNECTOR_CHANGE err: Timeout waiting for CCI mask 0x20000000, last CCI=0x00000002 (len=0, CONN_CHG=1)
+[08:10:19.806] EVENT ir=[] seq=0 CCI=0x00000002 (len=0, CONN_CHG=1) | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.74Wh,0.99W,8.09V) | BAT2:Discharging(41.88Wh,6.14W,7.89V)
+[08:10:19.841]     Conn1 Status: connected=True | dir=SINK (Consumer) | op_mode=USB_PD | partner=DFP (Downstream/Device) [USB]
+[08:10:19.841]       RDO=0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend) | batt_chg=Nominal | limit=0x0 | chg=0x4044 (PowerOpMode|NegotiatedPowerLevel|ConnectChange) | raw=44402b202cb104330100000000000000
+[08:10:19.860]       Partner Source PDO#1: 0x080190f0 [Fixed 5.00V @ 2.40A = 12.0W UnconstrainedPower]
+[08:10:19.860]       Partner Source PDO#2: 0x0002d12c [Fixed 9.00V @ 3.00A = 27.0W ]
+[08:10:19.860]       Partner Source PDO#3: 0x0006412c [Fixed 20.00V @ 3.00A = 60.0W ]
+[08:10:21.870]     ACK_CONNECTOR_CHANGE err: Timeout waiting for CCI mask 0x20000000, last CCI=0x00000002 (len=0, CONN_CHG=1)
+[08:10:22.029] EVENT ir=[] seq=0 CCI=0x00000002 (len=0, CONN_CHG=1) | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.04W,8.05V) | BAT2:Discharging(41.88Wh,6.28W,7.92V)
+[08:10:22.064]     Conn1 Status: connected=False | dir=SINK (Consumer) | op_mode=USB_PD | partner=Unknown(0) [USB]
+[08:10:22.064]       RDO=0x00000000 (none) | batt_chg=Nominal | limit=0x0 | chg=0x4044 (PowerOpMode|NegotiatedPowerLevel|ConnectChange) | raw=44402300000000000141060000000000
+[08:10:24.086]     ACK_CONNECTOR_CHANGE err: Timeout waiting for CCI mask 0x20000000, last CCI=0x00000002 (len=0, CONN_CHG=1)
+[08:10:24.246] EVENT ir=[] seq=0 CCI=0x00000002 (len=0, CONN_CHG=1) | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.04W,8.10V) | BAT2:Discharging(41.87Wh,6.32W,7.91V)
+[08:10:24.281]     Conn1 Status: connected=False | dir=SINK (Consumer) | op_mode=USB_PD | partner=Unknown(0) [USB]
+[08:10:24.281]       RDO=0x00000000 (none) | batt_chg=Nominal | limit=0x0 | chg=0x4044 (PowerOpMode|NegotiatedPowerLevel|ConnectChange) | raw=44402300000000000141060000000000
+[08:10:26.326]     ACK_CONNECTOR_CHANGE err: Timeout waiting for CCI mask 0x20000000, last CCI=0x00000002 (len=0, CONN_CHG=1)
+[08:10:26.545] EVENT ir=[] seq=0 CCI=0x00000002 (len=0, CONN_CHG=1) | PSR=1 ARTG=60000mW | ADP1=1 | BAT1:Discharging(12.73Wh,1.01W,8.07V) | BAT2:Discharging(41.87Wh,6.46W,7.91V)
+[08:10:26.579]     Conn1 Status: connected=False | dir=SINK (Consumer) | op_mode=USB_PD | partner=Unknown(0) [USB]
+[08:10:26.579]       RDO=0x00000000 (none) | batt_chg=Nominal | limit=0x0 | chg=0x4044 (PowerOpMode|NegotiatedPowerLevel|ConnectChange) | raw=44402300000000000141060000000000
+[08:10:28.632]     ACK_CONNECTOR_CHANGE err: Timeout waiting for CCI mask 0x20000000, last CCI=0x00000002 (len=0, CONN_CHG=1)
+[08:10:28.791] EVENT ir=[] seq=0 CCI=0x00000002 (len=0, CONN_CHG=1) | PSR=1 ARTG=60000mW | ADP1=1 | BAT1:Discharging(12.73Wh,1.04W,8.09V) | BAT2:Discharging(41.87Wh,6.57W,7.90V)
+[08:10:28.826]     Conn1 Status: connected=False | dir=SINK (Consumer) | op_mode=USB_PD | partner=Unknown(0) [USB]
+[08:10:28.826]       RDO=0x00000000 (none) | batt_chg=Nominal | limit=0x0 | chg=0x4044 (PowerOpMode|NegotiatedPowerLevel|ConnectChange) | raw=44402300000000000141060000000000
+[08:10:30.873]     ACK_CONNECTOR_CHANGE err: Timeout waiting for CCI mask 0x20000000, last CCI=0x00000002 (len=0, CONN_CHG=1)
+[08:10:31.032] EVENT ir=[] seq=0 CCI=0x00000002 (len=0, CONN_CHG=1) | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.97W,8.11V) | BAT2:Discharging(41.86Wh,6.66W,7.90V)
+[08:10:31.066]     Conn1 Status: connected=False | dir=SINK (Consumer) | op_mode=USB_PD | partner=Unknown(0) [USB]
+[08:10:31.066]       RDO=0x00000000 (none) | batt_chg=Nominal | limit=0x0 | chg=0x4044 (PowerOpMode|NegotiatedPowerLevel|ConnectChange) | raw=44402300000000000141060000000000
+[08:10:33.112]     ACK_CONNECTOR_CHANGE err: Timeout waiting for CCI mask 0x20000000, last CCI=0x00000002 (len=0, CONN_CHG=1)
+[08:10:33.272] EVENT ir=[] seq=0 CCI=0x00000002 (len=0, CONN_CHG=1) | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.85W,8.11V) | BAT2:Discharging(41.86Wh,6.74W,7.90V)
+[08:10:33.306]     Conn1 Status: connected=False | dir=SINK (Consumer) | op_mode=USB_PD | partner=Unknown(0) [USB]
+[08:10:33.306]       RDO=0x00000000 (none) | batt_chg=Nominal | limit=0x0 | chg=0x4044 (PowerOpMode|NegotiatedPowerLevel|ConnectChange) | raw=44402300000000000141060000000000
+[08:10:35.350]     ACK_CONNECTOR_CHANGE err: Timeout waiting for CCI mask 0x20000000, last CCI=0x00000002 (len=0, CONN_CHG=1)
+[08:10:35.352]   SSAM ADP1_PSR (TID=1,IID=1,CID=0x0D): 0x00000000 (0) raw=00000000
+[08:10:35.353]   SSAM ADP1_ARTG_mW (TID=1,IID=1,CID=0x0F): 0x00000000 (0) raw=00000000
+[08:10:35.357]   SSAM BASE_PSR? (TID=2,IID=1,CID=0x0D): 0x00000000 (0) raw=00000000
+[08:10:35.360]   SSAM BASE_ARTG_mW? (TID=2,IID=1,CID=0x0F): 0x00000000 (0) raw=00000000
+[08:10:35.362]   SSAM HPMI_SDB_CAPS (TID=1,IID=0,CID=0x50): 0x00000002 (2) raw=02000000
+[08:10:35.364]   SSAM BAT1_PROT_TP (TID=1,IID=1,CID=0x53): (21B) raw=0102d0000066760000a200ae1f66190000e4250000
+[08:10:35.367]   SSAM BAT2_PROT_TP (TID=2,IID=1,CID=0x53): (21B) raw=01b21001009cea000060000a1f00000000c8320000
+[08:10:35.368] 
+--- Stage 4: Testing Standard UCSI Recovery Commands ---
+[08:10:35.368] 
+>>> Issuing SET_PDR(conn=1, Sink/Consumer) (control=0x000000000101000b) ...
+[08:10:35.401]   Result CCI=0xc0000000 (len=0, CMD_DONE|ERROR)
+[08:10:35.434]   ERROR_STATUS: mask=0x4044 (InvalidCmdParams|ContractNegotiationFail|SetSinkPathRejected), vendor=2300000000000141060000000000
+[08:10:35.434] === Post-SET_PDR(conn=1, Sink/Consumer) Watch (6s) ===
+[08:10:35.626] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.83W,8.12V) | BAT2:Discharging(41.85Wh,6.80W,7.91V)
+[08:10:36.243] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.86W,8.08V) | BAT2:Discharging(41.85Wh,6.79W,7.92V)
+[08:10:36.243]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:36.587] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.86W,8.08V) | BAT2:Discharging(41.85Wh,6.79W,7.92V)
+[08:10:37.126] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=1 ARTG=60000mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.86W,8.08V) | BAT2:Discharging(41.85Wh,6.79W,7.92V)
+[08:10:37.630] STATE conn=False dir=SOURCE (Provider) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.87W,8.10V) | BAT2:Discharging(41.85Wh,6.78W,7.90V)
+[08:10:38.292] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.87W,8.10V) | BAT2:Discharging(41.85Wh,6.78W,7.90V)
+[08:10:38.292]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:38.635] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.87W,8.10V) | BAT2:Discharging(41.85Wh,6.78W,7.90V)
+[08:10:39.174] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=1 ARTG=60000mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.91W,8.07V) | BAT2:Discharging(41.84Wh,6.77W,7.92V)
+[08:10:39.669] STATE conn=False dir=SOURCE (Provider) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.91W,8.07V) | BAT2:Discharging(41.84Wh,6.77W,7.92V)
+[08:10:40.342] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.91W,8.09V) | BAT2:Discharging(41.84Wh,6.73W,7.92V)
+[08:10:40.342]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:40.686] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.91W,8.09V) | BAT2:Discharging(41.84Wh,6.73W,7.92V)
+[08:10:41.237] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=1 ARTG=60000mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.91W,8.10V) | BAT2:Discharging(41.84Wh,6.72W,7.91V)
+[08:10:41.538] 
+>>> Issuing CONNECTOR_RESET(conn=1, SoftReset) (control=0x0000000000010003) ...
+[08:10:41.571]   Result CCI=0x80000000 (len=0, CMD_DONE)
+[08:10:41.571] === Post-CONNECTOR_RESET(conn=1, SoftReset) Watch (6s) ===
+[08:10:41.763] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,0.91W,8.10V) | BAT2:Discharging(41.84Wh,6.72W,7.91V)
+[08:10:42.264] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.04W,7.98V) | BAT2:Discharging(41.84Wh,6.69W,7.93V)
+[08:10:43.517] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.21W,7.97V) | BAT2:Discharging(41.84Wh,6.65W,7.93V)
+[08:10:43.517]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:43.711] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.21W,7.97V) | BAT2:Discharging(41.84Wh,6.65W,7.93V)
+[08:10:44.205] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=1 ARTG=60000mW | ADP1=1 | BAT1:Discharging(12.73Wh,1.21W,7.97V) | BAT2:Discharging(41.84Wh,6.65W,7.93V)
+[08:10:44.700] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.21W,7.97V) | BAT2:Discharging(41.84Wh,6.65W,7.93V)
+[08:10:45.602] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.23W,8.09V) | BAT2:Discharging(41.83Wh,6.61W,7.93V)
+[08:10:45.602]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:45.795] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.23W,8.09V) | BAT2:Discharging(41.83Wh,6.61W,7.93V)
+[08:10:46.289] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=1 ARTG=60000mW | ADP1=1 | BAT1:Discharging(12.73Wh,1.23W,8.09V) | BAT2:Discharging(41.83Wh,6.61W,7.93V)
+[08:10:46.782] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.22W,8.10V) | BAT2:Discharging(41.83Wh,6.58W,7.90V)
+[08:10:47.654] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.20W,8.07V) | BAT2:Discharging(41.83Wh,6.59W,7.93V)
+[08:10:47.654]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:47.654] 
+>>> Issuing CONNECTOR_RESET(conn=1, HardReset) (control=0x0000000000810003) ...
+[08:10:47.713]   Result CCI=0x80000000 (len=0, CMD_DONE)
+[08:10:47.713] === Post-CONNECTOR_RESET(conn=1, HardReset) Watch (6s) ===
+[08:10:47.905] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.20W,8.07V) | BAT2:Discharging(41.83Wh,6.59W,7.93V)
+[08:10:48.399] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=1 ARTG=60000mW | ADP1=1 | BAT1:Discharging(12.73Wh,1.20W,8.07V) | BAT2:Discharging(41.83Wh,6.59W,7.93V)
+[08:10:48.892] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.22W,8.10V) | BAT2:Discharging(41.83Wh,6.54W,7.90V)
+[08:10:49.648] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.22W,8.10V) | BAT2:Discharging(41.83Wh,6.54W,7.90V)
+[08:10:49.648]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:49.844] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.22W,8.10V) | BAT2:Discharging(41.83Wh,6.54W,7.90V)
+[08:10:50.338] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=1 ARTG=60000mW | ADP1=1 | BAT1:Discharging(12.73Wh,1.22W,8.10V) | BAT2:Discharging(41.83Wh,6.54W,7.90V)
+[08:10:50.832] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.21W,8.09V) | BAT2:Discharging(41.82Wh,6.55W,7.93V)
+[08:10:51.695] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.20W,8.07V) | BAT2:Discharging(41.82Wh,6.55W,7.93V)
+[08:10:51.695]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:51.890] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.20W,8.07V) | BAT2:Discharging(41.82Wh,6.55W,7.93V)
+[08:10:52.383] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=1 ARTG=60000mW | ADP1=1 | BAT1:Discharging(12.73Wh,1.20W,8.07V) | BAT2:Discharging(41.82Wh,6.55W,7.93V)
+[08:10:52.887] STATE conn=False dir=SINK (Consumer) mode=USB_PD rdo=0x00000000 chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.20W,8.09V) | BAT2:Discharging(41.82Wh,6.51W,7.91V)
+[08:10:53.749] STATE conn=True dir=SINK (Consumer) mode=USB_PD rdo=0x3304b12c chg=Nominal | PSR=0 ARTG=0mW | ADP1=0 | BAT1:Discharging(12.73Wh,1.20W,8.09V) | BAT2:Discharging(41.82Wh,6.51W,7.91V)
+[08:10:53.749]     RDO detail: 0x3304b12c (PDO#3, Op=3.00A, Max/Min=3.00A, USBComm|NoSuspend)
+[08:10:53.749] 
+--- Final Snapshot ---
+[08:10:53.751] Final Sysfs Power: ADP1=0 | BAT1:Discharging(12.73Wh,1.20W,8.09V) | BAT2:Discharging(41.82Wh,6.51W,7.91V)
+[08:10:53.753]   SSAM ADP1_PSR (TID=1,IID=1,CID=0x0D): 0x00000000 (0) raw=00000000
+[08:10:53.755]   SSAM ADP1_ARTG_mW (TID=1,IID=1,CID=0x0F): 0x00000000 (0) raw=00000000
+[08:10:53.757]   SSAM BASE_PSR? (TID=2,IID=1,CID=0x0D): 0x00000000 (0) raw=00000000
+[08:10:53.760]   SSAM BASE_ARTG_mW? (TID=2,IID=1,CID=0x0F): 0x00000000 (0) raw=00000000
+[08:10:53.762]   SSAM HPMI_SDB_CAPS (TID=1,IID=0,CID=0x50): 0x00000002 (2) raw=02000000
+[08:10:53.764]   SSAM BAT1_PROT_TP (TID=1,IID=1,CID=0x53): (21B) raw=01eecf000066760000a200931f66190000e4250000
+[08:10:53.767]   SSAM BAT2_PROT_TP (TID=2,IID=1,CID=0x53): (21B) raw=01b21001006aea000060001d1f00000000c8320000
+[08:10:53.767] Diagnostic complete. Log saved to /home/jmvp/work/surface-usbc/diag.log

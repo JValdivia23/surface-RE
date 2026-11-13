@@ -1,0 +1,66 @@
+{
+  "id": "ev_3350f84a38bc1aff3dc660e82cbd8d9ed4fa96595fa17e016826d47fce63f6d5",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_pseudocode",
+  "params": {
+    "function": "0x1400435b0"
+  },
+  "result": {
+    "calls": [
+      "KeSetEvent",
+      "PsTerminateSystemThread",
+      "sub_140053700"
+    ],
+    "engine": "clean-room lifter",
+    "entry": "0x14004358a",
+    "function": "sub_14004358a",
+    "gotos": 0,
+    "inline_asm": 0,
+    "pseudo_code": "int64_t sub_14004358a()\n{\n    KeSetEvent(rdi + 0x1e8, 0, 0);\n    PsTerminateSystemThread(0);\n    rcx = stack_90;\n    rcx ^= rsp;\n    sub_140053700();\n    return rax;\n}\n",
+    "signature": "int64_t sub_14004358a()",
+    "strings": [],
+    "structured": true
+  },
+  "summary": "Pseudo-C for sub_14004358a (9 lines).",
+  "confidence": "inferred",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "register_level",
+      "message": "variables are machine registers and stack slots; types are not recovered"
+    },
+    {
+      "code": "calling_convention_assumed",
+      "message": "call arguments follow the usual x86_64 convention and may be wrong for unusual functions"
+    },
+    {
+      "code": "conditions_from_flags",
+      "message": "branch conditions are rebuilt from the last compare and may be approximate"
+    },
+    {
+      "code": "deep_engine_unavailable",
+      "message": "Deep mode is on, but Ghidra isn't installed. The person can get Ghidra from Settings → Engines. So this came from the built-in decompiler, which is less exact."
+    }
+  ],
+  "coverage": {
+    "status": "unknown"
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004358a"
+    }
+  ],
+  "links": [],
+  "carries_target_content": true
+}

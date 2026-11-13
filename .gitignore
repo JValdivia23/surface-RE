@@ -1,0 +1,41 @@
+# Extracted Microsoft Windows MSI drivers, firmware, and local RE dumps
+SurfaceUpdate/
+local/
+windows-drivers/
+
+# Proprietary Windows binaries / firmware archives
+*.msi
+*.cab
+*.exe
+*.sys
+*.dll
+*.cfu
+
+# Kernel module build artifacts
+*.o
+*.ko
+*.mod
+*.mod.c
+*.mod.o
+.*.cmd
+.tmp_versions/
+Module.symvers
+modules.order
+modules.builtin*
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Runtime test logs & completion markers
+*.done
+diag.log
+dkms_install.log
+module_test.log
+
+# OS / editor noise
+.DS_Store
+*.swp
+*.swo
+*~

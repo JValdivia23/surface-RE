@@ -1,0 +1,65 @@
+{
+  "id": "ev_fce762b12dada17100af19a5e8a4c15845f44b9dc8a229746ccb4b2a249d50e4",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_pseudocode",
+  "params": {
+    "function": "0x14004c7b0"
+  },
+  "result": {
+    "calls": [
+      "sub_140045b50",
+      "sub_14004dcf0"
+    ],
+    "engine": "clean-room lifter",
+    "entry": "0x14004c7b0",
+    "function": "sub_14004c7b0",
+    "gotos": 0,
+    "inline_asm": 0,
+    "pseudo_code": "int64_t sub_14004c7b0(int64_t rdx, int64_t r8, int64_t r9)\n{\n    stack_8 = rbx;\n    stack_10 = rsi;\n    edi = r8d;\n    esi = edx;\n    ebx = r9l;\n    sub_140045b50(2, edi, edx);\n    if (bl != 0) {\n        sub_14004dcf0(1, &sub_1400d42c0, edi, esi);\n    }\n    rbx = stack_30;\n    rsi = stack_38;\n    return rax;\n}\n",
+    "signature": "int64_t sub_14004c7b0(int64_t rdx, int64_t r8, int64_t r9)",
+    "strings": [],
+    "structured": true
+  },
+  "summary": "Pseudo-C for sub_14004c7b0 (15 lines).",
+  "confidence": "inferred",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "register_level",
+      "message": "variables are machine registers and stack slots; types are not recovered"
+    },
+    {
+      "code": "calling_convention_assumed",
+      "message": "call arguments follow the usual x86_64 convention and may be wrong for unusual functions"
+    },
+    {
+      "code": "conditions_from_flags",
+      "message": "branch conditions are rebuilt from the last compare and may be approximate"
+    },
+    {
+      "code": "deep_engine_unavailable",
+      "message": "Deep mode is on, but Ghidra isn't installed. The person can get Ghidra from Settings → Engines. So this came from the built-in decompiler, which is less exact."
+    }
+  ],
+  "coverage": {
+    "status": "unknown"
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004c7b0"
+    }
+  ],
+  "links": [],
+  "carries_target_content": true
+}

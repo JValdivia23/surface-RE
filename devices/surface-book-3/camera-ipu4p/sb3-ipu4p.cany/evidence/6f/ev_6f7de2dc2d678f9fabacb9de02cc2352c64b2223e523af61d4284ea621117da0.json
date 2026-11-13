@@ -1,0 +1,51 @@
+{
+  "id": "ev_6f7de2dc2d678f9fabacb9de02cc2352c64b2223e523af61d4284ea621117da0",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_callers_list",
+  "params": {
+    "function": "0x14004e6a0"
+  },
+  "result": {
+    "address_taken": 0,
+    "callers": [
+      {
+        "caller": "0x14004d000",
+        "name": "sub_14004d000",
+        "site": "0x14004d053"
+      }
+    ],
+    "entry": "0x14004e6a0",
+    "function": "sub_14004e6a0"
+  },
+  "summary": "sub_14004e6a0 is called from 1 places.",
+  "confidence": "derived",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "direct_calls_only",
+      "message": "callers that reach it through function pointers are not listed (see address_taken)"
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 1,
+    "total": 1
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004e6a0"
+    }
+  ],
+  "links": []
+}

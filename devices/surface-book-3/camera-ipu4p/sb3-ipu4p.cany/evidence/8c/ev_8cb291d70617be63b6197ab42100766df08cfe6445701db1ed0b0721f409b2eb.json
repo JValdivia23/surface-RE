@@ -1,0 +1,40 @@
+{
+  "id": "ev_8cb291d70617be63b6197ab42100766df08cfe6445701db1ed0b0721f409b2eb",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_disassemble",
+  "params": {
+    "function": "0x14004c740"
+  },
+  "result": {
+    "assembly": "sub_14004c740:\n  0x14004c740  48895c2408           mov [rsp+8], rbx\n  0x14004c745  48896c2410           mov [rsp+0x10], rbp\n  0x14004c74a  4889742418           mov [rsp+0x18], rsi\n  0x14004c74f  57                   push rdi\n  0x14004c750  4883ec20             sub rsp, 0x20\n  0x14004c754  8bf2                 mov esi, edx\n  0x14004c756  418bf8               mov edi, r8d\n  0x14004c759  8b5108               mov edx, [rcx+8]\n  0x14004c75c  488be9               mov rbp, rcx\n  0x14004c75f  4103d0               add edx, r8d\n  0x14004c762  b901000000           mov ecx, 1\n  0x14004c767  448bc6               mov r8d, esi\n  0x14004c76a  410fb6d9             movzx ebx, r9b\n  0x14004c76e  e8dd93ffff           call 0x140045b50  ; sub_140045b50\n  0x14004c773  84db                 test bl, bl\n  0x14004c775  741b                 je 0x14004c792\nloc_14004c777:\n  0x14004c777  448b4508             mov r8d, [rbp+8]\n  0x14004c77b  488d15fe7a0800       lea rdx, [0x1400d4280]  ; sub_1400d4280\n  0x14004c782  4403c7               add r8d, edi\n  0x14004c785  448bce               mov r9d, esi\n  0x14004c788  b901000000           mov ecx, 1\n  0x14004c78d  e85e150000           call 0x14004dcf0  ; sub_14004dcf0\nloc_14004c792:\n  0x14004c792  488b5c2430           mov rbx, [rsp+0x30]\n  0x14004c797  488b6c2438           mov rbp, [rsp+0x38]\n  0x14004c79c  488b742440           mov rsi, [rsp+0x40]\n  0x14004c7a1  4883c420             add rsp, 0x20\n  0x14004c7a5  5f                   pop rdi\n  0x14004c7a6  c3                   ret\n",
+    "entry": "0x14004c740",
+    "function": "sub_14004c740",
+    "instructions": 28
+  },
+  "summary": "28 instructions of sub_14004c740.",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [],
+  "coverage": {
+    "status": "complete",
+    "examined": 28,
+    "total": 28
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004c740"
+    }
+  ],
+  "links": []
+}

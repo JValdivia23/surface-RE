@@ -1,0 +1,40 @@
+{
+  "id": "ev_0634dbf85bb4491cc93e19cb09f872073436e6ed8397ed71c3ea689cfaca642e",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_disassemble",
+  "params": {
+    "function": "0x14004df80"
+  },
+  "result": {
+    "assembly": "sub_14004df80:\n  0x14004df80  4053                 push rbx\n  0x14004df82  55                   push rbp\n  0x14004df83  57                   push rdi\n  0x14004df84  4881ecb0000000       sub rsp, 0xb0\n  0x14004df8b  488b050e320c00       mov rax, [0x1401111a0]\n  0x14004df92  4833c4               xor rax, rsp\n  0x14004df95  4889842498000000     mov [rsp+0x98], rax\n  0x14004df9d  0f57c0               xorps xmm0, xmm0\n  0x14004dfa0  488d15296a0800       lea rdx, [0x1400d49d0]  ; sub_1400d49d0\n  0x14004dfa7  488be9               mov rbp, rcx\n  0x14004dfaa  4533c9               xor r9d, r9d\n  0x14004dfad  488d4c2478           lea rcx, [rsp+0x78]\n  0x14004dfb2  4533c0               xor r8d, r8d\n  0x14004dfb5  0f11442478           movups [rsp+0x78], xmm0\n  0x14004dfba  0f11842488000000     movups [rsp+0x88], xmm0\n  0x14004dfc2  e8c9faffff           call 0x14004da90  ; sub_14004da90\n  0x14004dfc7  8b0593450c00         mov eax, [0x140112560]\n  0x14004dfcd  83f802               cmp eax, 2\n  0x14004dfd0  7520                 jne 0x14004dff2\nloc_14004dfd2:\n  0x14004dfd2  833d8b450c0006       cmp dword ptr [0x140112564], 6\n  0x14004dfd9  488d3d40300c00       lea rdi, [0x140111020]\n  0x14004dfe0  488d05b92e0c00       lea rax, [0x140110ea0]\n  0x14004dfe7  bb0c000000           mov ebx, 0xc\n  0x14004dfec  480f4cf8             cmovl rdi, rax\n  0x14004dff0  eb15                 jmp 0x14004e007\nloc_14004dff2:\n  0x14004dff2  83f803               cmp eax, 3\n  0x14004dff5  0f8557020000         jne 0x14004e252  ; sub_14004e252\nloc_14004dffb:\n  0x14004dffb  488d3db6480c00       lea rdi, [0x1401128b8]\n  0x14004e002  bb01000000           mov ebx, 1\nloc_14004e007:\n  0x14004e007  448b4d10             mov r9d, [rbp+0x10]\n  0x14004e00b  b883de1b43           mov eax, 0x431bde83\n  0x14004e010  f76514               mul dword ptr [rbp+0x14]\n  0x14004e013  448b4518             mov r8d, [rbp+0x18]\n  0x14004e017  b901000000           mov ecx, 1\n  0x14004e01c  c1ea12               shr edx, 0x12\n  0x14004e01f  89542420             mov [rsp+0x20], edx\n  0x14004e023  488d15f6690800       lea rdx, [0x1400d4a20]  ; sub_1400d4a20\n  0x14004e02a  48895c2430           mov [rsp+0x30], rbx\n  0x14004e02f  e8bcfcffff           call 0x14004dcf0  ; sub_14004dcf0\n",
+    "entry": "0x14004df80",
+    "function": "sub_14004df80",
+    "instructions": 39
+  },
+  "summary": "39 instructions of sub_14004df80.",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [],
+  "coverage": {
+    "status": "complete",
+    "examined": 39,
+    "total": 39
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004df80"
+    }
+  ],
+  "links": []
+}

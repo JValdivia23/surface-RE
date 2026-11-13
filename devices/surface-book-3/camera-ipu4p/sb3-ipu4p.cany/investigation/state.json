@@ -1,0 +1,38 @@
+{
+  "revision": 3,
+  "brief": null,
+  "plan": [],
+  "hypotheses": [],
+  "findings": [
+    {
+      "id": "fnd_1",
+      "statement": "In iacamera64.sys (sub_14004df80/sub_14004e034), the 12-entry IPU4P PHY building-block table at 0x140111020 explicitly maps fw_port 3 (Rear OV8865, CSI-2 port 0) to BB 6 (crc=13, drc=32, afe=0x15), fw_port 6 (Front IR OV7251, CSI-2 port 1) to BB 8 (crc=13, drc=32, afe=0x15), and fw_port 7 (Front RGB OV5693, CSI-2 port 2) to BB 10 (crc=13, drc=32, afe=0x15).",
+      "evidence_ids": [
+        "ev_0634dbf85bb4491cc93e19cb09f872073436e6ed8397ed71c3ea689cfaca642e",
+        "ev_b0bb5783c6ad7b997313283784945f475969d9998837ea86482d78997d6dc078",
+        "ev_f295af674520c4c3a93536e9358f2aeb57a99252f3eaacc18962e6255054780d"
+      ],
+      "confidence": "observed"
+    },
+    {
+      "id": "fnd_2",
+      "statement": "In iacamera64.sys (sub_14004e290/sub_14004e313), IPU4P uses a 16-ticks/ns CSI-2 D-PHY counter (ACCINV=16: csettle = 1520 - 128000/rate_mhz, dsettle = 1360 - 32000/rate_mhz), double IPU6 ACCINV=8. Furthermore, 2-lane CSI-2 receiver blocks (fw_port 0,1,6,7 -> Linux CSI-2 ports 1 IR and 2 Front) use shifted register offsets (+0x30 TERMEN_CLANE, +0x34 SETTLE_CLANE, +0x38+8*i TERMEN_DLANE, +0x3c+8*i SETTLE_DLANE), whereas 4-lane blocks (fw_port 2,3,8,9 -> Linux CSI-2 port 0 Rear and ports 3-4) use unshifted offsets (+0x2c, +0x30, +0x34+8*i, +0x38+8*i).",
+      "evidence_ids": [
+        "ev_b026539c9e27318dd4d86860ecf5b4554787e8987470957049401b145c954bc2",
+        "ev_adf2542a5629b7a693161534e5267f0f01a7b05ae3a42405c434e45e1ee3ace9"
+      ],
+      "confidence": "observed"
+    },
+    {
+      "id": "fnd_3",
+      "statement": "In iacamera64.sys (sub_14004e6a0), Buttress register 0x100d8 (CSI_BSCAN_EXCLUDE) sets 0x08040200 (BIT(9)|BIT(18)|BIT(27)) for fw_ports 0..3 and 6..9, and iactrllogic64.sys manages INT3472 discrete Power0/Power1/PowerEn, Mclk, LedFront/LedRear, and PrivateLED lines.",
+      "evidence_ids": [
+        "ev_ba6a8b77aa1b3353f7f6cb35008d4f41960abfaa0349f323a35d492ea1a0a8ae",
+        "ev_ec98a39aad6eec5724a833d0d1a76a5b99bfa1da35cfaaf336090759221fd31d"
+      ],
+      "confidence": "observed"
+    }
+  ],
+  "handoff": null,
+  "updated": "2026-11-02T02:48:55Z"
+}

@@ -1,0 +1,126 @@
+{
+  "id": "ev_ec98a39aad6eec5724a833d0d1a76a5b99bfa1da35cfaaf336090759221fd31d",
+  "subject": {
+    "kind": "pe",
+    "sha256": "64275a1c50c548cbb3f4d5ef037e7090eb0b443c433a41d72f7fa2a653df8405",
+    "name": "iactrllogic64.sys"
+  },
+  "operation": "native_strings_find",
+  "params": {
+    "case_sensitive": false,
+    "limit": 60,
+    "mode": "regex",
+    "offset": 0,
+    "pattern": "Mipi|Clk|Freq|Lane|Gpio|Led|Power|4800|Vcm|dw9719|MSHW"
+  },
+  "result": {
+    "matches": [
+      {
+        "address": "0x140024568",
+        "references": [
+          {
+            "from": "0x140027088",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "LedRear"
+      },
+      {
+        "address": "0x140024570",
+        "references": [
+          {
+            "from": "0x140027090",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "LedFront"
+      },
+      {
+        "address": "0x14002457c",
+        "references": [
+          {
+            "from": "0x140027098",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Power0"
+      },
+      {
+        "address": "0x140024584",
+        "references": [
+          {
+            "from": "0x1400270a0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Power1"
+      },
+      {
+        "address": "0x1400245a8",
+        "references": [
+          {
+            "from": "0x1400270b8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "PowerEn"
+      },
+      {
+        "address": "0x1400245b0",
+        "references": [
+          {
+            "from": "0x1400270c0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Mclk"
+      },
+      {
+        "address": "0x1400245b8",
+        "references": [
+          {
+            "from": "0x1400270c8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "PrivateLED"
+      },
+      {
+        "address": "0x14002d142",
+        "references": [],
+        "section": ".rsrc",
+        "text": "FileDescription"
+      }
+    ],
+    "total": 8
+  },
+  "summary": "8 strings match \"Mipi|Clk|Freq|Lane|Gpio|Led|Power|4800|Vcm|dw9719|MSHW\".",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "data_sections_only",
+      "message": "only strings stored in the file are searched (absence is not proof)"
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 8,
+    "total": 8
+  },
+  "locations": [],
+  "links": []
+}

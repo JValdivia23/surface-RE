@@ -1,0 +1,100 @@
+{
+  "id": "ev_8a757f4c64d8a7af5d08610ae183145abf6393c2af54db79ca6a91a2f7f6a1e8",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_bytes_find",
+  "params": {
+    "encoding": "both",
+    "limit": 100,
+    "offset": 0,
+    "path": "/home/jmvp/work/surface-ipu4p/windows-drivers/sb3-camera-drivers/SurfaceUpdate/camera/iacamera64.sys",
+    "pattern": "4c 01 01 00",
+    "text": null
+  },
+  "result": {
+    "file_size": 1523912,
+    "limit": 100,
+    "match_cap_reached": false,
+    "matches": [
+      {
+        "address": "0x1400435b0",
+        "bytes": "4c010100",
+        "file_offset": 272816,
+        "file_offset_hex": "0x429b0",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14004e134",
+        "bytes": "4c010100",
+        "file_offset": 316724,
+        "file_offset_hex": "0x4d534",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14004e147",
+        "bytes": "4c010100",
+        "file_offset": 316743,
+        "file_offset_hex": "0x4d547",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      }
+    ],
+    "native_container": "pe",
+    "offset": 0,
+    "path": "/home/jmvp/work/surface-ipu4p/windows-drivers/sb3-camera-drivers/SurfaceUpdate/camera/iacamera64.sys",
+    "searched_for": [
+      {
+        "kind": "pattern",
+        "length": 4
+      }
+    ],
+    "total_matches": 3
+  },
+  "summary": "3 match(es) for pattern in iacamera64.sys; showing 3 from #0.",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "file_bytes_only",
+      "message": "The file's bytes are searched as stored: compressed, encrypted or packed regions and data built at run time are not seen, so no match is not proof of absence."
+    },
+    {
+      "code": "unmapped_regions",
+      "message": "Matches in headers, overlays or debug data that are not loaded into memory have no virtual address."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 3,
+    "total": 3
+  },
+  "locations": [
+    {
+      "kind": "file_offset",
+      "value": "0x429b0"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x4d534"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x4d547"
+    }
+  ],
+  "links": []
+}

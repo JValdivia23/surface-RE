@@ -1,0 +1,59 @@
+{
+  "id": "ev_ee3f81067a07564613d3480ae1e135e4c5d615475088b6449ff698b7f36153ee",
+  "subject": {
+    "kind": "pe",
+    "sha256": "201d52f2a1d9441ca20b0a7801ec450276e9161a9aa5617fcc165941c74f0d39",
+    "name": "ov7251.sys"
+  },
+  "operation": "native_bytes_find",
+  "params": {
+    "encoding": "both",
+    "limit": 100,
+    "offset": 0,
+    "path": "/home/jmvp/work/surface-ipu4p/windows-drivers/sb3-camera-drivers/SurfaceUpdate/ov7251/ov7251.sys",
+    "pattern": "00 72 0d 26",
+    "text": null
+  },
+  "result": {
+    "file_size": 171096,
+    "limit": 100,
+    "match_cap_reached": false,
+    "matches": [],
+    "native_container": "pe",
+    "offset": 0,
+    "path": "/home/jmvp/work/surface-ipu4p/windows-drivers/sb3-camera-drivers/SurfaceUpdate/ov7251/ov7251.sys",
+    "searched_for": [
+      {
+        "kind": "pattern",
+        "length": 4
+      }
+    ],
+    "total_matches": 0
+  },
+  "summary": "0 match(es) for pattern in ov7251.sys.",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "file_bytes_only",
+      "message": "The file's bytes are searched as stored: compressed, encrypted or packed regions and data built at run time are not seen, so no match is not proof of absence."
+    },
+    {
+      "code": "unmapped_regions",
+      "message": "Matches in headers, overlays or debug data that are not loaded into memory have no virtual address."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 0,
+    "total": 0
+  },
+  "locations": [],
+  "links": []
+}

@@ -1,0 +1,77 @@
+{
+  "id": "ev_b0bb5783c6ad7b997313283784945f475969d9998837ea86482d78997d6dc078",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_pseudocode",
+  "params": {
+    "function": "0x14004e134"
+  },
+  "result": {
+    "calls": [
+      "sub_14004c6a0",
+      "sub_14004c7b0",
+      "sub_14004da90",
+      "sub_14004db40",
+      "sub_14004dcf0",
+      "sub_140053700"
+    ],
+    "engine": "clean-room lifter",
+    "entry": "0x14004e034",
+    "function": "sub_14004e034",
+    "gotos": 2,
+    "inline_asm": 7,
+    "pseudo_code": "int64_t sub_14004e034()\n{\n    stack_d8 = rsi;\n    rdi += 8;\n    stack_e0 = r12;\n    stack_e8 = r13;\n    stack_a8 = r14;\n    stack_a0 = r15;\n    while (true) {\nlabel_14004e060:\n        eax = arg_18;\n        if (*(uint32_t*)(rdi - 8) == eax) {\n            eax = arg_10;\n            if (*(uint32_t*)(rdi - 4) == eax) {\n                esi = *(uint32_t*)(rdi);\n                if (arg_14 > 0x59682f00 /* unsigned */) {\n                    r15d = *(uint32_t*)(rdi + 8);\n                } else {\n                    r15d = *(uint32_t*)(rdi + 4);\n                }\n                r13d = *(uint32_t*)(rdi + 12);\n                stack_20 = r13d;\n                sub_14004dcf0(1, &sub_1400d4a60, esi, r15d);\n                __asm(\"xorps xmm0, xmm0\");\n                __asm(\"movups [rsp+0x58], xmm0\");\n                __asm(\"movups [rsp+0x68], xmm0\");\n                sub_14004da90(&stack_58, &sub_1400d4a90, 0, 0);\n                r14d = esi;\n                r12d = esi;\n                r14d >>= 1;\n                r14d <<= 8;\n                r12d &= 1;\n                if (r12d == 0) {\n                    rax = sub_14004c6a0(rbp, r14 + 0x10100, 1);\n                    eax &= -0x7f;\n                    r15d &= 0x3f;\n                    edx = r15 + r15;\n                    edx |= eax;\n                    edx |= 1;\n                    sub_14004c7b0(rbp, rdx, r14 + 0x10100, 1);\n                    rax = sub_14004c6a0(rbp, r14 + 0x1014c, 1);\n                    r13d &= 0x3f;\n                    eax &= -0x7f;\n                    edx = r13 * 2;\n                    edx |= eax;\n                    edx |= 1;\n                    sub_14004c7b0(rbp, rdx, r14 + 0x1014c, 1);\n                } else {\n                    sub_14004dcf0(1, &sub_1400d4ab0, esi);\n                }\n                sub_14004db40(&stack_58);\n                r15d = *(uint32_t*)(rdi + 0x14);\n                r13d = *(uint32_t*)(rdi + 16);\n                __asm(\"xorps xmm0, xmm0\");\n                __asm(\"movups [rsp+0x38], xmm0\");\n                __asm(\"movups [rsp+0x48], xmm0\");\n                sub_14004da90(&stack_38, &sub_1400d4af0, 0, 0);\n                if (r12d == 0) {\n                    r15d &= 0x3f;\n                    ebx = r15d;\n                    r13d &= 0x7ff;\n                    __asm(\"bts ebx, 7\");\n                    ebx <<= 6;\n                    ebx |= r15d;\n                    ebx <<= 6;\n                    ebx |= r15d;\n                    ebx <<= 11;\n                    ebx |= r13d;\n                    sub_14004c7b0(rbp, ebx, r14 + 0x10174, 1);\n                    sub_14004dcf0(1, &sub_1400d4b40, esi, ebx);\n                } else {\n                    sub_14004dcf0(1, &sub_1400d4b10, esi);\n                }\n                sub_14004db40(&stack_38);\n                rbx = stack_30;\n            }\n        }\n    }\nlabel_14004e228:\n    r15 = stack_a0;\n    r14 = stack_a8;\n    r13 = stack_e8;\n    r12 = stack_e0;\n    rsi = stack_d8;\n    sub_14004db40(&stack_78);\n    eax = 0;\n    rcx = stack_98;\n    rcx ^= rsp;\n    sub_140053700();\n    return rax;\n    rdi += 0x20;\n    rbx -= 1;\n    stack_30 = rbx;\n    if (rbx != 0) {\n        goto label_14004e060;\n    }\n    goto label_14004e228;\n}\n",
+    "signature": "int64_t sub_14004e034()",
+    "strings": [],
+    "structured": false
+  },
+  "summary": "Pseudo-C for sub_14004e034 (98 lines, partly unstructured).",
+  "confidence": "inferred",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "register_level",
+      "message": "variables are machine registers and stack slots; types are not recovered"
+    },
+    {
+      "code": "calling_convention_assumed",
+      "message": "call arguments follow the usual x86_64 convention and may be wrong for unusual functions"
+    },
+    {
+      "code": "conditions_from_flags",
+      "message": "branch conditions are rebuilt from the last compare and may be approximate"
+    },
+    {
+      "code": "unstructured_flow",
+      "message": "2 gotos remain where the control flow isn't a simple if/loop"
+    },
+    {
+      "code": "inline_asm",
+      "message": "7 instructions have no C rule and are shown as __asm(...)"
+    },
+    {
+      "code": "deep_engine_unavailable",
+      "message": "Deep mode is on, but Ghidra isn't installed. The person can get Ghidra from Settings → Engines. So this came from the built-in decompiler, which is less exact."
+    }
+  ],
+  "coverage": {
+    "status": "unknown"
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004e034"
+    }
+  ],
+  "links": [],
+  "carries_target_content": true
+}

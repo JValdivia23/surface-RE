@@ -1,0 +1,1027 @@
+{
+  "id": "ev_0ede8497220500dae450e187732c344402c70fb2b5346691fdc53366c984bb2d",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_strings_find",
+  "params": {
+    "case_sensitive": false,
+    "limit": 100,
+    "mode": "regex",
+    "offset": 0,
+    "pattern": "ISys|CSI|PHY|Mipi|Port|Lane|Clk"
+  },
+  "result": {
+    "matches": [
+      {
+        "address": "0x1400e8da4",
+        "references": [
+          {
+            "from": "0x14010f7f0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISYS"
+      },
+      {
+        "address": "0x1400e8e10",
+        "references": [
+          {
+            "from": "0x14010efe0",
+            "function": null
+          },
+          {
+            "from": "0x14010f610",
+            "function": null
+          },
+          {
+            "from": "0x14010f680",
+            "function": null
+          },
+          {
+            "from": "0x14010f6f0",
+            "function": null
+          },
+          {
+            "from": "0x14010fdb0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISysMipi"
+      },
+      {
+        "address": "0x1400e8e20",
+        "references": [
+          {
+            "from": "0x14010efe8",
+            "function": null
+          },
+          {
+            "from": "0x14010f618",
+            "function": null
+          },
+          {
+            "from": "0x14010f688",
+            "function": null
+          },
+          {
+            "from": "0x14010fdb8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISysRawNs"
+      },
+      {
+        "address": "0x1400e8e30",
+        "references": [
+          {
+            "from": "0x14010eff0",
+            "function": null
+          },
+          {
+            "from": "0x14010f620",
+            "function": null
+          },
+          {
+            "from": "0x14010f690",
+            "function": null
+          },
+          {
+            "from": "0x14010f700",
+            "function": null
+          },
+          {
+            "from": "0x14010fdc0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISysRawNs2nd"
+      },
+      {
+        "address": "0x1400e8e40",
+        "references": [
+          {
+            "from": "0x14010eff8",
+            "function": null
+          },
+          {
+            "from": "0x14010f628",
+            "function": null
+          },
+          {
+            "from": "0x14010f698",
+            "function": null
+          },
+          {
+            "from": "0x14010f708",
+            "function": null
+          },
+          {
+            "from": "0x14010fdc8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISysRawSoc"
+      },
+      {
+        "address": "0x1400e8e50",
+        "references": [
+          {
+            "from": "0x14010f000",
+            "function": null
+          },
+          {
+            "from": "0x14010f630",
+            "function": null
+          },
+          {
+            "from": "0x14010f6a0",
+            "function": null
+          },
+          {
+            "from": "0x14010f710",
+            "function": null
+          },
+          {
+            "from": "0x14010fdd0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISysRawSoc2nd"
+      },
+      {
+        "address": "0x1400e8e60",
+        "references": [
+          {
+            "from": "0x14010f008",
+            "function": null
+          },
+          {
+            "from": "0x14010f638",
+            "function": null
+          },
+          {
+            "from": "0x14010f6a8",
+            "function": null
+          },
+          {
+            "from": "0x14010f718",
+            "function": null
+          },
+          {
+            "from": "0x14010fdd8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISysRawPDAF"
+      },
+      {
+        "address": "0x1400e8e70",
+        "references": [
+          {
+            "from": "0x14010f010",
+            "function": null
+          },
+          {
+            "from": "0x14010f640",
+            "function": null
+          },
+          {
+            "from": "0x14010f6b0",
+            "function": null
+          },
+          {
+            "from": "0x14010f720",
+            "function": null
+          },
+          {
+            "from": "0x14010fde0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISysYuv"
+      },
+      {
+        "address": "0x1400ea240",
+        "references": [
+          {
+            "from": "0x14010f558",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "<isys_cropped_output>"
+      },
+      {
+        "address": "0x1400ea258",
+        "references": [
+          {
+            "from": "0x14010f560",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "</isys_cropped_output>"
+      },
+      {
+        "address": "0x1400ea270",
+        "references": [
+          {
+            "from": "0x14010f568",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "<isys_cropped_output />"
+      },
+      {
+        "address": "0x1400eca67",
+        "references": [],
+        "section": ".rdata",
+        "text": "qISysRawNS"
+      },
+      {
+        "address": "0x1400f18e8",
+        "references": [
+          {
+            "from": "0x140157d8e",
+            "function": "sub_140157980"
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISYS"
+      },
+      {
+        "address": "0x1400f3b00",
+        "references": [
+          {
+            "from": "0x140110e00",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Datalane HS SoT Error (recoverable)"
+      },
+      {
+        "address": "0x1400f3b28",
+        "references": [
+          {
+            "from": "0x140110e10",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Datalane HS SoT Sync Error (non-recoverable)"
+      },
+      {
+        "address": "0x1400f3b58",
+        "references": [
+          {
+            "from": "0x140110e20",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Datalane Esc mode error"
+      },
+      {
+        "address": "0x1400f3b70",
+        "references": [
+          {
+            "from": "0x140110e30",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Datalane Trigger sequence received"
+      },
+      {
+        "address": "0x1400f3b98",
+        "references": [
+          {
+            "from": "0x140110e40",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Datalane ULPS received"
+      },
+      {
+        "address": "0x1400f3bb0",
+        "references": [
+          {
+            "from": "0x140110e50",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "Clock lane ULPS received (active LOW)"
+      },
+      {
+        "address": "0x1400f6a58",
+        "references": [
+          {
+            "from": "0x1401114b8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "SupportMuteMode"
+      },
+      {
+        "address": "0x1400f6a78",
+        "references": [
+          {
+            "from": "0x1401114e0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "SupportSaveRestoreMode"
+      },
+      {
+        "address": "0x1400f72c8",
+        "references": [
+          {
+            "from": "0x140111c88",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "KmdSupportStandardNV12"
+      },
+      {
+        "address": "0x1400f72f8",
+        "references": [
+          {
+            "from": "0x140111cb0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "KmdSupportStandardYUY2"
+      },
+      {
+        "address": "0x1400f7328",
+        "references": [
+          {
+            "from": "0x140111cd8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "KmdSupportStandardYUY2UsingAvx"
+      },
+      {
+        "address": "0x1400f7640",
+        "references": [
+          {
+            "from": "0x140111fd0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "SupportProfile"
+      },
+      {
+        "address": "0x1400fb0f8",
+        "references": [
+          {
+            "from": "0x1400f9f38",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_INL"
+      },
+      {
+        "address": "0x1400fb118",
+        "references": [
+          {
+            "from": "0x1400f9f48",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_BLC_GLOBAL"
+      },
+      {
+        "address": "0x1400fb140",
+        "references": [
+          {
+            "from": "0x1400f9f58",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_BLC_SENSOR_TYPE_0"
+      },
+      {
+        "address": "0x1400fb168",
+        "references": [
+          {
+            "from": "0x1400f9f68",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_BLC_SENSOR_TYPE_1"
+      },
+      {
+        "address": "0x1400fb190",
+        "references": [
+          {
+            "from": "0x1400f9f78",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_BLC_SENSOR_TYPE_2"
+      },
+      {
+        "address": "0x1400fb1b8",
+        "references": [
+          {
+            "from": "0x1400f9f88",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_PCLN"
+      },
+      {
+        "address": "0x1400fb1d8",
+        "references": [
+          {
+            "from": "0x1400f9f98",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_V1_0_SENSOR_TYPE_0"
+      },
+      {
+        "address": "0x1400fb208",
+        "references": [
+          {
+            "from": "0x1400f9fa8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_V1_0_SENSOR_TYPE_1"
+      },
+      {
+        "address": "0x1400fb238",
+        "references": [
+          {
+            "from": "0x1400f9fb8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_V1_0_SENSOR_TYPE_2"
+      },
+      {
+        "address": "0x1400fb268",
+        "references": [
+          {
+            "from": "0x1400f9fc8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_1_0"
+      },
+      {
+        "address": "0x1400fb288",
+        "references": [
+          {
+            "from": "0x1400f9fd8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_1_0_1"
+      },
+      {
+        "address": "0x1400fb2a8",
+        "references": [
+          {
+            "from": "0x1400f9fe8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_IDS_BXT_B0"
+      },
+      {
+        "address": "0x1400fb2d0",
+        "references": [
+          {
+            "from": "0x1400f9ff8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_IDS_V2_1"
+      },
+      {
+        "address": "0x1400fb2f0",
+        "references": [
+          {
+            "from": "0x1400fa008",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_3A_STAT_AWB"
+      },
+      {
+        "address": "0x1400fb318",
+        "references": [
+          {
+            "from": "0x1400fa018",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_3A_STAT_AF"
+      },
+      {
+        "address": "0x1400fb340",
+        "references": [
+          {
+            "from": "0x1400fa028",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_3A_STAT_AE_CCM"
+      },
+      {
+        "address": "0x1400fb368",
+        "references": [
+          {
+            "from": "0x1400fa038",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_3A_STAT_AE"
+      },
+      {
+        "address": "0x1400fbab0",
+        "references": [
+          {
+            "from": "0x1400fa358",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_IDS_CNL"
+      },
+      {
+        "address": "0x1400fbad0",
+        "references": [
+          {
+            "from": "0x1400fa368",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_IDS_V3_1"
+      },
+      {
+        "address": "0x1400fbaf0",
+        "references": [
+          {
+            "from": "0x1400fa378",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_3A_STAT_PAF_CNL"
+      },
+      {
+        "address": "0x1400fbb38",
+        "references": [
+          {
+            "from": "0x1400fa398",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_1_1"
+      },
+      {
+        "address": "0x1400fbb58",
+        "references": [
+          {
+            "from": "0x1400fa3a8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_PEXT_1_1"
+      },
+      {
+        "address": "0x1400fbf20",
+        "references": [
+          {
+            "from": "0x1400fa548",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_1_1_1"
+      },
+      {
+        "address": "0x1400fbf98",
+        "references": [
+          {
+            "from": "0x1400fa578",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_SIS_WB"
+      },
+      {
+        "address": "0x1400fbfb8",
+        "references": [
+          {
+            "from": "0x1400fa588",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_SIS_1"
+      },
+      {
+        "address": "0x1400fbfd8",
+        "references": [
+          {
+            "from": "0x1400fa598",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_SIS_CROP"
+      },
+      {
+        "address": "0x1400fc160",
+        "references": [
+          {
+            "from": "0x1400fa648",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_V1_1_SENSOR_TYPE_0"
+      },
+      {
+        "address": "0x1400fc190",
+        "references": [
+          {
+            "from": "0x1400fa658",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_V1_1_SENSOR_TYPE_1"
+      },
+      {
+        "address": "0x1400fc1c0",
+        "references": [
+          {
+            "from": "0x1400fa668",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_V1_1_SENSOR_TYPE_2"
+      },
+      {
+        "address": "0x1400fc308",
+        "references": [
+          {
+            "from": "0x1400fa6e8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_1_2_DEPRECATED"
+      },
+      {
+        "address": "0x1400fc338",
+        "references": [
+          {
+            "from": "0x1400fa6f8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_PEXT_1_2_DEPRECATED"
+      },
+      {
+        "address": "0x1400fc438",
+        "references": [
+          {
+            "from": "0x1400fa758",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LCA_1_0"
+      },
+      {
+        "address": "0x1400fc458",
+        "references": [
+          {
+            "from": "0x1400fa768",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_B2I_SIE_1_0_USM"
+      },
+      {
+        "address": "0x1400fc480",
+        "references": [
+          {
+            "from": "0x1400fa778",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_B2I_SIE_1_0_CSC"
+      },
+      {
+        "address": "0x1400fc4a8",
+        "references": [
+          {
+            "from": "0x1400fa788",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_B2I_SIE_1_0_CCM"
+      },
+      {
+        "address": "0x1400fc4d0",
+        "references": [
+          {
+            "from": "0x1400fa798",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_B2I_SIE_1_0_GTM"
+      },
+      {
+        "address": "0x1400fc4f8",
+        "references": [
+          {
+            "from": "0x1400fa7a8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_B2I_BNR_1_0"
+      },
+      {
+        "address": "0x1400fc840",
+        "references": [
+          {
+            "from": "0x1400fa908",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DS_1_0_0"
+      },
+      {
+        "address": "0x1400fc860",
+        "references": [
+          {
+            "from": "0x1400fa918",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_CCM_3A_2_0"
+      },
+      {
+        "address": "0x1400fc888",
+        "references": [
+          {
+            "from": "0x1400fa928",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_GDC5"
+      },
+      {
+        "address": "0x1400fcab0",
+        "references": [
+          {
+            "from": "0x1400faa08",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_WBA_4PPC"
+      },
+      {
+        "address": "0x1400fcaf0",
+        "references": [
+          {
+            "from": "0x1400faa28",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DS_1_0_1"
+      },
+      {
+        "address": "0x1400fcb90",
+        "references": [
+          {
+            "from": "0x1400faa68",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_1_3"
+      },
+      {
+        "address": "0x1400fcbb0",
+        "references": [
+          {
+            "from": "0x1400faa78",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_PEXT_1_3"
+      },
+      {
+        "address": "0x1400fcc50",
+        "references": [
+          {
+            "from": "0x1400faab8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LCA_1_0_2"
+      },
+      {
+        "address": "0x1400fcc90",
+        "references": [
+          {
+            "from": "0x1400faad8",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_SAM_1_3"
+      },
+      {
+        "address": "0x1400fcd88",
+        "references": [
+          {
+            "from": "0x1400fab48",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_HDR_SENSOR_TYPE_0"
+      },
+      {
+        "address": "0x1400fcdb8",
+        "references": [
+          {
+            "from": "0x1400fab58",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_HDR_SENSOR_TYPE_1"
+      },
+      {
+        "address": "0x1400fcde8",
+        "references": [
+          {
+            "from": "0x1400fab68",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_LSC_HDR_SENSOR_TYPE_2"
+      },
+      {
+        "address": "0x1400fce18",
+        "references": [
+          {
+            "from": "0x1400fab78",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_GDDPC_PEXT"
+      },
+      {
+        "address": "0x1400fce40",
+        "references": [
+          {
+            "from": "0x1400fab88",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_2_PEXT"
+      },
+      {
+        "address": "0x1400fce68",
+        "references": [
+          {
+            "from": "0x1400fab98",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_2_SAM"
+      },
+      {
+        "address": "0x1400fd998",
+        "references": [
+          {
+            "from": "0x1400fb028",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_DPC_1_1_TO_1_0_1"
+      },
+      {
+        "address": "0x1400fda68",
+        "references": [
+          {
+            "from": "0x1400fb078",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "IA_P2P_ISYS_KERNEL_ID_RGBIR_2_1"
+      },
+      {
+        "address": "0x140172510",
+        "references": [],
+        "section": ".rsrc",
+        "text": "ISYS:INFO: %1\r\n"
+      },
+      {
+        "address": "0x140172aa8",
+        "references": [],
+        "section": ".rsrc",
+        "text": "isys"
+      }
+    ],
+    "total": 81
+  },
+  "summary": "81 strings match \"ISys|CSI|PHY|Mipi|Port|Lane|Clk\".",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "data_sections_only",
+      "message": "only strings stored in the file are searched (absence is not proof)"
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 81,
+    "total": 81
+  },
+  "locations": [],
+  "links": []
+}

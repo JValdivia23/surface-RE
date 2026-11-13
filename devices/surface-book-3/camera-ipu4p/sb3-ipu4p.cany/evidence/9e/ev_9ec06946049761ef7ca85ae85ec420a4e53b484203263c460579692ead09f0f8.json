@@ -1,0 +1,70 @@
+{
+  "id": "ev_9ec06946049761ef7ca85ae85ec420a4e53b484203263c460579692ead09f0f8",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_strings_find",
+  "params": {
+    "case_sensitive": false,
+    "limit": 120,
+    "mode": "regex",
+    "offset": 0,
+    "pattern": "Mipi|Dphy|Csi|Settle|Termen|AFE|DLL_OVRD|BSCAN|8a19|IPU4|BuildingBlock"
+  },
+  "result": {
+    "matches": [
+      {
+        "address": "0x1400e8e10",
+        "references": [
+          {
+            "from": "0x14010efe0",
+            "function": null
+          },
+          {
+            "from": "0x14010f610",
+            "function": null
+          },
+          {
+            "from": "0x14010f680",
+            "function": null
+          },
+          {
+            "from": "0x14010f6f0",
+            "function": null
+          },
+          {
+            "from": "0x14010fdb0",
+            "function": null
+          }
+        ],
+        "section": ".rdata",
+        "text": "ISysMipi"
+      }
+    ],
+    "total": 1
+  },
+  "summary": "1 strings match \"Mipi|Dphy|Csi|Settle|Termen|AFE|DLL_OVRD|BSCAN|8a19|IPU4|BuildingBlock\".",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "data_sections_only",
+      "message": "only strings stored in the file are searched (absence is not proof)"
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 1,
+    "total": 1
+  },
+  "locations": [],
+  "links": []
+}

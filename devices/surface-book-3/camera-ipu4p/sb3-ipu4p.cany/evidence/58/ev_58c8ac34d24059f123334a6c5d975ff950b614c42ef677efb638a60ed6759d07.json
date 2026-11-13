@@ -1,0 +1,273 @@
+{
+  "id": "ev_58c8ac34d24059f123334a6c5d975ff950b614c42ef677efb638a60ed6759d07",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_bytes_find",
+  "params": {
+    "encoding": "both",
+    "limit": 20,
+    "offset": 0,
+    "path": "/home/jmvp/work/surface-ipu4p/windows-drivers/sb3-camera-drivers/SurfaceUpdate/camera/iacamera64.sys",
+    "pattern": "50 05 00 00",
+    "text": null
+  },
+  "result": {
+    "file_size": 1523912,
+    "limit": 20,
+    "match_cap_reached": false,
+    "matches": [
+      {
+        "address": "0x140032c93",
+        "bytes": "50050000",
+        "file_offset": 204947,
+        "file_offset_hex": "0x32093",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140032cba",
+        "bytes": "50050000",
+        "file_offset": 204986,
+        "file_offset_hex": "0x320ba",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140033bcc",
+        "bytes": "50050000",
+        "file_offset": 208844,
+        "file_offset_hex": "0x32fcc",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14004e386",
+        "bytes": "50050000",
+        "file_offset": 317318,
+        "file_offset_hex": "0x4d786",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400579ff",
+        "bytes": "50050000",
+        "file_offset": 355839,
+        "file_offset_hex": "0x56dff",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14009437a",
+        "bytes": "50050000",
+        "file_offset": 604026,
+        "file_offset_hex": "0x9377a",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140095ac1",
+        "bytes": "50050000",
+        "file_offset": 609985,
+        "file_offset_hex": "0x94ec1",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14009d846",
+        "bytes": "50050000",
+        "file_offset": 642118,
+        "file_offset_hex": "0x9cc46",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400a2ccb",
+        "bytes": "50050000",
+        "file_offset": 663755,
+        "file_offset_hex": "0xa20cb",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400ab1b3",
+        "bytes": "50050000",
+        "file_offset": 697779,
+        "file_offset_hex": "0xaa5b3",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400bc3e1",
+        "bytes": "50050000",
+        "file_offset": 767969,
+        "file_offset_hex": "0xbb7e1",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140133add",
+        "bytes": "50050000",
+        "file_offset": 1236189,
+        "file_offset_hex": "0x12dcdd",
+        "length": 4,
+        "matched": "pattern",
+        "section": "PAGE"
+      },
+      {
+        "address": "0x140133e30",
+        "bytes": "50050000",
+        "file_offset": 1237040,
+        "file_offset_hex": "0x12e030",
+        "length": 4,
+        "matched": "pattern",
+        "section": "PAGE"
+      },
+      {
+        "address": "0x140133edd",
+        "bytes": "50050000",
+        "file_offset": 1237213,
+        "file_offset_hex": "0x12e0dd",
+        "length": 4,
+        "matched": "pattern",
+        "section": "PAGE"
+      },
+      {
+        "address": "0x1401359d6",
+        "bytes": "50050000",
+        "file_offset": 1244118,
+        "file_offset_hex": "0x12fbd6",
+        "length": 4,
+        "matched": "pattern",
+        "section": "PAGE"
+      },
+      {
+        "address": "0x14013a5be",
+        "bytes": "50050000",
+        "file_offset": 1263550,
+        "file_offset_hex": "0x1347be",
+        "length": 4,
+        "matched": "pattern",
+        "section": "PAGE"
+      },
+      {
+        "address": "0x140150fe8",
+        "bytes": "50050000",
+        "file_offset": 1356264,
+        "file_offset_hex": "0x14b1e8",
+        "length": 4,
+        "matched": "pattern",
+        "section": "PAGE"
+      },
+      {
+        "address": "0x1401516b1",
+        "bytes": "50050000",
+        "file_offset": 1358001,
+        "file_offset_hex": "0x14b8b1",
+        "length": 4,
+        "matched": "pattern",
+        "section": "PAGE"
+      },
+      {
+        "address": "0x1401516c8",
+        "bytes": "50050000",
+        "file_offset": 1358024,
+        "file_offset_hex": "0x14b8c8",
+        "length": 4,
+        "matched": "pattern",
+        "section": "PAGE"
+      },
+      {
+        "address": "0x14017248f",
+        "bytes": "50050000",
+        "file_offset": 1490063,
+        "file_offset_hex": "0x16bc8f",
+        "length": 4,
+        "matched": "pattern",
+        "section": ".rsrc"
+      }
+    ],
+    "native_container": "pe",
+    "offset": 0,
+    "path": "/home/jmvp/work/surface-ipu4p/windows-drivers/sb3-camera-drivers/SurfaceUpdate/camera/iacamera64.sys",
+    "searched_for": [
+      {
+        "kind": "pattern",
+        "length": 4
+      }
+    ],
+    "total_matches": 20
+  },
+  "summary": "20 match(es) for pattern in iacamera64.sys; showing 20 from #0.",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "file_bytes_only",
+      "message": "The file's bytes are searched as stored: compressed, encrypted or packed regions and data built at run time are not seen, so no match is not proof of absence."
+    },
+    {
+      "code": "unmapped_regions",
+      "message": "Matches in headers, overlays or debug data that are not loaded into memory have no virtual address."
+    }
+  ],
+  "coverage": {
+    "status": "complete",
+    "examined": 20,
+    "total": 20
+  },
+  "locations": [
+    {
+      "kind": "file_offset",
+      "value": "0x32093"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x320ba"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x32fcc"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x4d786"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x56dff"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x9377a"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x94ec1"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x9cc46"
+    }
+  ],
+  "links": []
+}

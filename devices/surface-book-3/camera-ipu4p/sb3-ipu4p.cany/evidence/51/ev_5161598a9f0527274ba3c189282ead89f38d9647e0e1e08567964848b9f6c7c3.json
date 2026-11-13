@@ -1,0 +1,73 @@
+{
+  "id": "ev_5161598a9f0527274ba3c189282ead89f38d9647e0e1e08567964848b9f6c7c3",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_pseudocode",
+  "params": {
+    "function": "0x14004e386"
+  },
+  "result": {
+    "calls": [
+      "sub_14004c740",
+      "sub_14004dcf0"
+    ],
+    "engine": "clean-room lifter",
+    "entry": "0x14004e313",
+    "function": "sub_14004e313",
+    "gotos": 2,
+    "inline_asm": 10,
+    "pseudo_code": "int64_t sub_14004e313(int64_t rcx)\n{\n    *(uint64_t*)(rax + 0x18) = r12;\n    *(uint64_t*)(rax - 0x18) = r13;\n    *(uint64_t*)(rax - 0x20) = r14;\n    *(uint64_t*)(rax - 0x28) = r15;\n    eax = 0x431bde83;\n    rdx:rax = rax * ecx;\n    r9d = edx;\n    r9d >>= 0x12;\n    if (r9d > 1) {\n        edx = 0xfff1d700;\n        eax = 0xfffe0c00;\n        eax = edx;\n        __asm(\"cdq\");\n        __asm(\"idiv r9d\");\n        r14d = eax;\n        r14d += 0x5f0;\n        r14d = ebx;\n    } else {\n        r14d = ebx;\n    }\n    if (r9d > 1) {\n        edx = 0xfff34e00;\n        eax = 0xffff8300;\n        eax = edx;\n        __asm(\"cdq\");\n        __asm(\"idiv r9d\");\n    } else {\n    }\n    r13d = 0x260;\n    r13d = ebx;\n    if (r9d > 1) {\n        eax = 0xfa00;\n        __asm(\"cdq\");\n        __asm(\"idiv r9d\");\n        esi = eax;\n        esi += 0x230;\n        esi = ebx;\n    } else {\n        esi = ebx;\n    }\n    if (r9d > 1) {\n        eax = 0x3e800;\n        r15d = 0x12c0;\n        __asm(\"cdq\");\n        __asm(\"idiv r9d\");\n        r15d -= eax;\n        r15d = ebx;\n    } else {\n        r15d = ebx;\n    }\n    if (r9d > 1) {\n        eax = 0x17700;\n        r12d = 0x910;\n        __asm(\"cdq\");\n        __asm(\"idiv r9d\");\n        r12d -= eax;\n        r12d = ebx;\n    } else {\n        r12d = ebx;\n    }\n    sub_14004dcf0(1, &sub_1400d48a0);\n    r8d = 0;\n    stack_20 = ebx;\n    sub_14004dcf0(r8 + 1, &sub_1400d48d0, r8, r13d);\n    r8d = 0;\n    stack_20 = ebx;\n    sub_14004dcf0(r8 + 1, &sub_1400d4910, r8, esi);\n    stack_20 = r14d;\n    sub_14004dcf0(1, &sub_1400d4950, r14d, r15d);\n    stack_20 = ebp;\n    sub_14004dcf0(1, &sub_1400d4990, ebp, r12d);\n    ecx = *(uint32_t*)(rdi + 0x18);\n    r15 = stack_70;\n    r13 = stack_80;\n    r12 = stack_b0;\n    if (ecx <= 1 /* unsigned */) {\nlabel_14004e522:\n        sub_14004c740(rdi, r14d, 0x34, 1);\n        edx = 0;\n        sub_14004c740(rdi, rdx, rdx + 0x30, 1);\n        rax = *(uint32_t*)(rdi + 0x18);\n        if (*(uint32_t*)(rsp + rax * 4 + 0x30) > ebx /* unsigned */) {\n            esi = 0x38;\n            while (true) {\n                sub_14004c740(rdi, ebp, rsi + 4, 1);\n                sub_14004c740(rdi, 0, esi, 1);\n                rax = *(uint32_t*)(rdi + 0x18);\n                ebx++;\n                esi += 8;\n                if (ebx >= *(uint32_t*)(rsp + rax * 4 + 0x30) /* unsigned */) break;\n            }\n        }\n    } else {\n        eax = rcx - 6;\n        if (eax <= 1 /* unsigned */) {\n            goto label_14004e522;\n        } else {\n            eax = rcx - 2;\n            if (eax <= 1 /* unsigned */) {\nlabel_14004e4b4:\n                sub_14004c740(rdi, r14d, 0x30, 1);\n                edx = 0;\n                sub_14004c740(rdi, rdx, rdx + 0x2c, 1);\n                rax = *(uint32_t*)(rdi + 0x18);\n                if (*(uint32_t*)(rsp + rax * 4 + 0x30) > ebx /* unsigned */) {\n                    esi = 0x34;\n                    while (true) {\n                        sub_14004c740(rdi, ebp, rsi + 4, 1);\n                        sub_14004c740(rdi, 0, esi, 1);\n                        rax = *(uint32_t*)(rdi + 0x18);\n                        ebx++;\n                        esi += 8;\n                        if (ebx >= *(uint32_t*)(rsp + rax * 4 + 0x30) /* unsigned */) break;\n                    }\n                }\n            } else {\n                eax = rcx - 8;\n                if (eax <= 1 /* unsigned */) {\n                    goto label_14004e4b4;\n                }\n            }\n        }\n    }\n    rsi = stack_a8;\n    r14 = stack_78;\n}\n",
+    "signature": "int64_t sub_14004e313(int64_t rcx)",
+    "strings": [],
+    "structured": false
+  },
+  "summary": "Pseudo-C for sub_14004e313 (128 lines, partly unstructured).",
+  "confidence": "inferred",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "register_level",
+      "message": "variables are machine registers and stack slots; types are not recovered"
+    },
+    {
+      "code": "calling_convention_assumed",
+      "message": "call arguments follow the usual x86_64 convention and may be wrong for unusual functions"
+    },
+    {
+      "code": "conditions_from_flags",
+      "message": "branch conditions are rebuilt from the last compare and may be approximate"
+    },
+    {
+      "code": "unstructured_flow",
+      "message": "2 gotos remain where the control flow isn't a simple if/loop"
+    },
+    {
+      "code": "inline_asm",
+      "message": "10 instructions have no C rule and are shown as __asm(...)"
+    },
+    {
+      "code": "deep_engine_unavailable",
+      "message": "Deep mode is on, but Ghidra isn't installed. The person can get Ghidra from Settings → Engines. So this came from the built-in decompiler, which is less exact."
+    }
+  ],
+  "coverage": {
+    "status": "unknown"
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004e313"
+    }
+  ],
+  "links": [],
+  "carries_target_content": true
+}

@@ -1,0 +1,358 @@
+{
+  "id": "ev_cd13494d427bfd94a464493178adfeef816c50c1dc86a41c7eb680c56d67fd6d",
+  "subject": {
+    "kind": "pe",
+    "sha256": "b7effa768e5e36bb3e0e3dfa5d25f70173c98d34251694570733ae23ae6f0d0d",
+    "name": "ov5693.sys"
+  },
+  "operation": "native_bytes_find",
+  "params": {
+    "encoding": "both",
+    "limit": 30,
+    "offset": 0,
+    "path": "/home/jmvp/work/surface-ipu4p/windows-drivers/sb3-camera-drivers/SurfaceUpdate/camerasensor5693/ov5693.sys",
+    "pattern": "00 48",
+    "text": null
+  },
+  "result": {
+    "file_size": 177864,
+    "limit": 30,
+    "match_cap_reached": false,
+    "matches": [
+      {
+        "bytes": "0048",
+        "file_offset": 582,
+        "file_offset_hex": "0x246",
+        "length": 2,
+        "matched": "pattern"
+      },
+      {
+        "bytes": "0048",
+        "file_offset": 662,
+        "file_offset_hex": "0x296",
+        "length": 2,
+        "matched": "pattern"
+      },
+      {
+        "bytes": "0048",
+        "file_offset": 1023,
+        "file_offset_hex": "0x3ff",
+        "length": 2,
+        "matched": "pattern"
+      },
+      {
+        "address": "0x14000102c",
+        "bytes": "0048",
+        "file_offset": 1068,
+        "file_offset_hex": "0x42c",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001034",
+        "bytes": "0048",
+        "file_offset": 1076,
+        "file_offset_hex": "0x434",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001094",
+        "bytes": "0048",
+        "file_offset": 1172,
+        "file_offset_hex": "0x494",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400010c8",
+        "bytes": "0048",
+        "file_offset": 1224,
+        "file_offset_hex": "0x4c8",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400010e5",
+        "bytes": "0048",
+        "file_offset": 1253,
+        "file_offset_hex": "0x4e5",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001106",
+        "bytes": "0048",
+        "file_offset": 1286,
+        "file_offset_hex": "0x506",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14000116d",
+        "bytes": "0048",
+        "file_offset": 1389,
+        "file_offset_hex": "0x56d",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400011a0",
+        "bytes": "0048",
+        "file_offset": 1440,
+        "file_offset_hex": "0x5a0",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400011a8",
+        "bytes": "0048",
+        "file_offset": 1448,
+        "file_offset_hex": "0x5a8",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400011d3",
+        "bytes": "0048",
+        "file_offset": 1491,
+        "file_offset_hex": "0x5d3",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400011ed",
+        "bytes": "0048",
+        "file_offset": 1517,
+        "file_offset_hex": "0x5ed",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14000125b",
+        "bytes": "0048",
+        "file_offset": 1627,
+        "file_offset_hex": "0x65b",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001297",
+        "bytes": "0048",
+        "file_offset": 1687,
+        "file_offset_hex": "0x697",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400012b1",
+        "bytes": "0048",
+        "file_offset": 1713,
+        "file_offset_hex": "0x6b1",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001337",
+        "bytes": "0048",
+        "file_offset": 1847,
+        "file_offset_hex": "0x737",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14000133f",
+        "bytes": "0048",
+        "file_offset": 1855,
+        "file_offset_hex": "0x73f",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14000137d",
+        "bytes": "0048",
+        "file_offset": 1917,
+        "file_offset_hex": "0x77d",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400013ad",
+        "bytes": "0048",
+        "file_offset": 1965,
+        "file_offset_hex": "0x7ad",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400013b4",
+        "bytes": "0048",
+        "file_offset": 1972,
+        "file_offset_hex": "0x7b4",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400013f0",
+        "bytes": "0048",
+        "file_offset": 2032,
+        "file_offset_hex": "0x7f0",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001423",
+        "bytes": "0048",
+        "file_offset": 2083,
+        "file_offset_hex": "0x823",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001433",
+        "bytes": "0048",
+        "file_offset": 2099,
+        "file_offset_hex": "0x833",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14000143b",
+        "bytes": "0048",
+        "file_offset": 2107,
+        "file_offset_hex": "0x83b",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001442",
+        "bytes": "0048",
+        "file_offset": 2114,
+        "file_offset_hex": "0x842",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x14000144d",
+        "bytes": "0048",
+        "file_offset": 2125,
+        "file_offset_hex": "0x84d",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x140001496",
+        "bytes": "0048",
+        "file_offset": 2198,
+        "file_offset_hex": "0x896",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      },
+      {
+        "address": "0x1400014e2",
+        "bytes": "0048",
+        "file_offset": 2274,
+        "file_offset_hex": "0x8e2",
+        "length": 2,
+        "matched": "pattern",
+        "section": ".text"
+      }
+    ],
+    "native_container": "pe",
+    "offset": 0,
+    "path": "/home/jmvp/work/surface-ipu4p/windows-drivers/sb3-camera-drivers/SurfaceUpdate/camerasensor5693/ov5693.sys",
+    "searched_for": [
+      {
+        "kind": "pattern",
+        "length": 2
+      }
+    ],
+    "total_matches": 1626
+  },
+  "summary": "1626 match(es) for pattern in ov5693.sys; showing 30 from #0.",
+  "confidence": "observed",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "file_bytes_only",
+      "message": "The file's bytes are searched as stored: compressed, encrypted or packed regions and data built at run time are not seen, so no match is not proof of absence."
+    },
+    {
+      "code": "unmapped_regions",
+      "message": "Matches in headers, overlays or debug data that are not loaded into memory have no virtual address."
+    }
+  ],
+  "coverage": {
+    "status": "partial",
+    "examined": 30,
+    "total": 1626,
+    "next_offset": 30
+  },
+  "locations": [
+    {
+      "kind": "file_offset",
+      "value": "0x246"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x296"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x3ff"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x42c"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x434"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x494"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x4c8"
+    },
+    {
+      "kind": "file_offset",
+      "value": "0x4e5"
+    }
+  ],
+  "links": []
+}

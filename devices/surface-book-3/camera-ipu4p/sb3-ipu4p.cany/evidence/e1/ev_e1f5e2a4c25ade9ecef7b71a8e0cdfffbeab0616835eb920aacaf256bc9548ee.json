@@ -1,0 +1,73 @@
+{
+  "id": "ev_e1f5e2a4c25ade9ecef7b71a8e0cdfffbeab0616835eb920aacaf256bc9548ee",
+  "subject": {
+    "kind": "pe",
+    "sha256": "3a92f0c648d1c8f7be3890c47c7b509a300405e22b64b519668ffbfd0d474f9e",
+    "name": "iacamera64.sys"
+  },
+  "operation": "native_function_pseudocode",
+  "params": {
+    "function": "0x14004d000"
+  },
+  "result": {
+    "calls": [
+      "0x1400e76c8",
+      "sub_14004da90",
+      "sub_14004db40",
+      "sub_14004e6a0",
+      "sub_14004e9e0",
+      "sub_140053700"
+    ],
+    "engine": "clean-room lifter",
+    "entry": "0x14004d000",
+    "function": "sub_14004d000",
+    "gotos": 0,
+    "inline_asm": 3,
+    "pseudo_code": "int64_t sub_14004d000(int64_t rcx)\n{\n    rax = *(uint64_t*)0x1401111a0;\n    rax ^= rsp;\n    stack_40 = rax;\n    __asm(\"xorps xmm0, xmm0\");\n    rbx = rcx;\n    __asm(\"movups [rsp+0x20], xmm0\");\n    __asm(\"movups [rsp+0x30], xmm0\");\n    sub_14004da90(&stack_20, &sub_1400d4370, 0, 0);\n    rcx = *(uint64_t*)(rbx + 0x20);\n    if (rcx != 0) {\n        sub_14004e9e0();\n    }\n    rcx = *(uint64_t*)(rbx + 0x18);\n    if (rcx != 0) {\n        sub_14004e6a0();\n    }\n    rax = *(uint64_t*)(rbx);\n    rax = *(uint64_t*)(rax + 0x20);\n    (*0x1400e76c8)(rbx, 1);\n    sub_14004db40(&stack_20);\n    rcx = stack_40;\n    rcx ^= rsp;\n    sub_140053700();\n    return rax;\n}\n",
+    "signature": "int64_t sub_14004d000(int64_t rcx)",
+    "strings": [],
+    "structured": true
+  },
+  "summary": "Pseudo-C for sub_14004d000 (27 lines).",
+  "confidence": "inferred",
+  "authority": "original-files",
+  "environment": {
+    "clean_room": false,
+    "engine": "builtin",
+    "engine_version": "0.2.0",
+    "host": "linux-x86_64"
+  },
+  "limitations": [
+    {
+      "code": "register_level",
+      "message": "variables are machine registers and stack slots; types are not recovered"
+    },
+    {
+      "code": "calling_convention_assumed",
+      "message": "call arguments follow the usual x86_64 convention and may be wrong for unusual functions"
+    },
+    {
+      "code": "conditions_from_flags",
+      "message": "branch conditions are rebuilt from the last compare and may be approximate"
+    },
+    {
+      "code": "inline_asm",
+      "message": "3 instructions have no C rule and are shown as __asm(...)"
+    },
+    {
+      "code": "deep_engine_unavailable",
+      "message": "Deep mode is on, but Ghidra isn't installed. The person can get Ghidra from Settings → Engines. So this came from the built-in decompiler, which is less exact."
+    }
+  ],
+  "coverage": {
+    "status": "unknown"
+  },
+  "locations": [
+    {
+      "kind": "address",
+      "value": "0x14004d000"
+    }
+  ],
+  "links": [],
+  "carries_target_content": true
+}
