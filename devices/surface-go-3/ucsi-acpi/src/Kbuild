@@ -1,0 +1,1 @@
+obj-m := ucsi_acpi.o

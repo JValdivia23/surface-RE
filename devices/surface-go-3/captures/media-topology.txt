@@ -1,0 +1,106 @@
+Media controller API version 7.2.15
+
+Media device information
+------------------------
+driver          ipu3-cio2
+model           Intel IPU3 CIO2
+serial          
+bus info        PCI:0000:00:14.3
+hw revision     0x0
+driver version  7.2.15
+
+Device topology
+- entity 1: ipu3-csi2 0 (2 pads, 2 links, 0 routes)
+            type V4L2 subdev subtype Unknown flags 0
+            device node name /dev/v4l-subdev2
+	pad0: SINK,MUST_CONNECT
+		[stream:0 fmt:SBGGR10_1X10/1632x1224 field:none colorspace:raw]
+		<- "ov8865 2-0010":0 [ENABLED]
+	pad1: SOURCE
+		[stream:0 fmt:SBGGR10_1X10/1632x1224 field:none colorspace:raw]
+		-> "ipu3-cio2 0":0 [ENABLED,IMMUTABLE]
+
+- entity 4: ipu3-cio2 0 (1 pad, 1 link)
+            type Node subtype V4L flags 0
+            device node name /dev/video0
+	pad0: SINK,MUST_CONNECT
+		<- "ipu3-csi2 0":1 [ENABLED,IMMUTABLE]
+
+- entity 10: ipu3-csi2 1 (2 pads, 2 links, 0 routes)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev3
+	pad0: SINK,MUST_CONNECT
+		[stream:0 fmt:SBGGR10_1X10/2592x1944 field:none]
+		<- "ov5693 4-0036":0 [ENABLED]
+	pad1: SOURCE
+		[stream:0 fmt:SBGGR10_1X10/2592x1944 field:none]
+		-> "ipu3-cio2 1":0 [ENABLED,IMMUTABLE]
+
+- entity 13: ipu3-cio2 1 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video1
+	pad0: SINK,MUST_CONNECT
+		<- "ipu3-csi2 1":1 [ENABLED,IMMUTABLE]
+
+- entity 19: ipu3-csi2 2 (2 pads, 2 links, 0 routes)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev4
+	pad0: SINK,MUST_CONNECT
+		[stream:0 fmt:SGRBG10_1X10/1936x1096 field:none colorspace:raw]
+		<- "ov7251 3-0060":0 []
+	pad1: SOURCE
+		[stream:0 fmt:SGRBG10_1X10/1936x1096 field:none colorspace:raw]
+		-> "ipu3-cio2 2":0 [ENABLED,IMMUTABLE]
+
+- entity 22: ipu3-cio2 2 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video2
+	pad0: SINK,MUST_CONNECT
+		<- "ipu3-csi2 2":1 [ENABLED,IMMUTABLE]
+
+- entity 28: ipu3-csi2 3 (2 pads, 1 link, 0 routes)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev5
+	pad0: SINK,MUST_CONNECT
+		[stream:0 fmt:SGRBG10_1X10/1936x1096 field:none colorspace:raw]
+	pad1: SOURCE
+		[stream:0 fmt:SGRBG10_1X10/1936x1096 field:none colorspace:raw]
+		-> "ipu3-cio2 3":0 [ENABLED,IMMUTABLE]
+
+- entity 31: ipu3-cio2 3 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video3
+	pad0: SINK,MUST_CONNECT
+		<- "ipu3-csi2 3":1 [ENABLED,IMMUTABLE]
+
+- entity 37: ov5693 4-0036 (1 pad, 1 link, 0 routes)
+             type V4L2 subdev subtype Sensor flags 0
+             device node name /dev/v4l-subdev6
+	pad0: SOURCE
+		[stream:0 fmt:SBGGR10_1X10/2592x1944@1/30
+		 crop.bounds:(16,6)/2592x1944
+		 crop:(16,6)/2592x1944]
+		-> "ipu3-csi2 1":0 [ENABLED]
+
+- entity 39: ov7251 3-0060 (1 pad, 1 link, 0 routes)
+             type V4L2 subdev subtype Sensor flags 0
+             device node name /dev/v4l-subdev7
+	pad0: SOURCE
+		[stream:0 fmt:Y10_1X10/640x480@100/3000 field:none colorspace:srgb xfer:srgb ycbcr:601 quantization:full-range
+		 crop.bounds:(4,4)/648x488
+		 crop:(0,0)/640x480]
+		-> "ipu3-csi2 2":0 []
+
+- entity 41: ov8865 2-0010 (1 pad, 1 link, 0 routes)
+             type V4L2 subdev subtype Sensor flags 0
+             device node name /dev/v4l-subdev8
+	pad0: SOURCE
+		[stream:0 fmt:SBGGR10_1X10/3264x2448@1/0 field:none colorspace:raw xfer:none ycbcr:601 quantization:full-range
+		 crop.bounds:(16,40)/3264x2448
+		 crop:(16,40)/3264x2448]
+		-> "ipu3-csi2 0":0 [ENABLED]
+
+- entity 43: dw9719 2-000c (0 pad, 0 link, 0 routes)
+             type V4L2 subdev subtype Lens flags 0
+             device node name /dev/v4l-subdev9
+
