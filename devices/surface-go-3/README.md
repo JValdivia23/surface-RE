@@ -11,6 +11,8 @@ Device: `Surface_Go_3_2022` (Intel Core i3-10100Y, BIOS `15.102.143`, running `7
   - Front IR: `ov7251` (`INT347E:00`, `3-0060`)
 - **Type Cover / Trackpad**:
   - Microsoft Surface Keyboard (`045e:09b5` USB HID); fixed locally by DKMS `surface-go3-hid-multitouch/0.1.0` (`MT_QUIRK_NO_SUSPEND_MODES`), which skips mode-switch `SET_REPORT`s in `mt_suspend()`, `mt_resume()`, `mt_on_hid_hw_open()`, and `mt_on_hid_hw_close()`, and skips `HID_DG_LATENCYMODE` (`rep=8`) and `HID_DG_SURFACESWITCH`/`HID_DG_BUTTONSWITCH` (`rep=16`) in `mt_need_to_apply_feature()` (leaving only `HID_DG_INPUTMODE` `rep=7`), plus UKI embedding via `/etc/mkinitcpio.conf.d/zz-surface-go3-hid-multitouch.conf`. **Post-reboot cold-boot + first-suspend/resume verified** (`srcversion 0C550FE4364C9359E8BD94C`, zero `usbhid` / `suspend error -5` errors).
+- **Touchscreen**:
+  - ELAN `ELAN9038:00` (`04F3:2A1C`, I2C HID over `I2C1` / `INT344B:00` GPIO `103` IRQ `136`); fixed locally by DKMS `surface-go3-i2c-hid/0.1.0`, adding `I2C_HID_QUIRK_RESET_ON_RESUME` for `04F3:2A1C` in `i2c_hid_quirks[]` (plus `I2C_HID_QUIRK_NO_WAKEUP_AFTER_RESET | I2C_HID_QUIRK_BOGUS_IRQ`) so `i2c_hid_core_resume()` issues `RESET` after `SET_POWER(ON)` across extended `s2idle`. **Installed and live-reloaded** (`srcversion D9C1DA0F275212672B82CB8`, extended-suspend verification pending user test).
 - **USB-C / UCSI**:
   - `ucsi_acpi USBC000:00`: fixed locally by DKMS `surface-go3-ucsi-acpi/0.1.0`, which adds a zero-version `1.1` fallback (since `_DSM(READ)` omits `VER1`/`VER2` on cold boot), preserves `CCI_RESET_COMPLETE` across `_Q79` polling, and drains lingering `RESET_COMPLETE` in `EC0.CCI` after `PPM_RESET` so `SET_NOTIFICATION_ENABLE` does not stall. **Post-reboot cold-boot and live USB-C PD negotiation verified** (`/sys/class/typec/port0`, `port0-partner`, `port0-cable`, 20 V / 2.25 A PD).
 - **Audio**:
@@ -49,6 +51,13 @@ Device: `Surface_Go_3_2022` (Intel Core i3-10100Y, BIOS `15.102.143`, running `7
   - [mkinitcpio.conf.d/zz-surface-go3-hid-multitouch.conf](hid-multitouch/mkinitcpio.conf.d/zz-surface-go3-hid-multitouch.conf): forces the DKMS `hid_multitouch` into the initramfs/UKI. The `zz-` prefix must sort after `surface_device_modules.conf`; a `99-` prefix is overwritten by that file's `MODULES=(...)`.
 - **Status**:
   - **Post-reboot cold-boot & first-suspend verified (`7.2.15-1-omarchy`):** DKMS `surface-go3-hid-multitouch/0.1.0` (`srcversion 0C550FE4364C9359E8BD94C`, embedded in `/boot/EFI/Linux/omarchy_linux-omarchy.efi`, SHA-256 `0b151028…`) loaded cleanly on cold boot (`skipping mode changes during system suspend`), survived the first cold-boot `s2idle` cycle (`PM: suspend entry` -> `PM: suspend exit`) with zero `usbhid` / `usb_submit_urb(ctrl) failed: -1` / `suspend error -5` entries and `edgepad.service` active. Temporary `surface-go3-touchpad-resume.service` / `surface-go3-touchpad-recover` workaround removed.
+
+### 4. Touchscreen ([i2c-hid/](i2c-hid/))
+- **Problem**: `ELAN9038:00` (`04F3:2A1C`, I2C HID on `I2C1` at `0x10`, `GpioInt` pin `103`) stopped emitting touch reports after extended `s2idle` (`~7.7 h` overnight `SLP_S0`) while short suspends still worked. During the wedged state, the controller still answered I2C `HIDIOCGFEATURE` (`rid=10`), and an ephemeral `i2c_hid_acpi` `unbind`/`bind` (sending `SET_POWER(ON)` + `RESET`) immediately restored touch.
+- **Root Cause**: Upstream `i2c-hid-core.c` matches `04F3:2A1C` via the wildcard `{ USB_VENDOR_ID_ELAN, HID_ANY_ID, I2C_HID_QUIRK_BOGUS_IRQ | I2C_HID_QUIRK_NO_WAKEUP_AFTER_RESET }`, which omits `I2C_HID_QUIRK_RESET_ON_RESUME`. On resume from deeper `s2idle` power states, `i2c_hid_core_resume()` only sends `SET_POWER(ON)` without a hardware `RESET`, leaving the ELAN touch controller non-reporting until `RESET` runs.
+- **Fix (`i2c-hid/`)**: Added `{ USB_VENDOR_ID_ELAN, 0x2a1c, I2C_HID_QUIRK_NO_WAKEUP_AFTER_RESET | I2C_HID_QUIRK_BOGUS_IRQ | I2C_HID_QUIRK_RESET_ON_RESUME }` after the `HID_ANY_ID` entry in `i2c_hid_quirks[]` (so `i2c_hid_lookup_quirk()` selects the last matching entry) and packaged it as DKMS `surface-go3-i2c-hid/0.1.0`.
+- **Status**:
+  - **Installed and live-reloaded (`7.2.15-1-omarchy`):** `surface-go3-i2c-hid/0.1.0` (`srcversion D9C1DA0F275212672B82CB8`) installed to `/lib/modules/7.2.15-1-omarchy/updates/dkms/i2c-hid.ko.zst` (not in UKI initrd), loaded live, and bound `0018:04F3:2A1C.*` cleanly. Extended `s2idle` verification pending user test.
 
 ## Captures
 
